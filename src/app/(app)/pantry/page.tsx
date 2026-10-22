@@ -67,7 +67,7 @@ export default function PantryPage() {
   return (
     <div className="max-w-2xl mx-auto">
       {/* Heading */}
-      <h1 className="text-3xl font-bold text-slate-800 mb-3">Pantry</h1>
+      <h1 className="display text-3xl font-bold text-slate-800 mb-3">Pantry</h1>
       <p className="text-slate-600 mb-6">
         Keep track of your staple ingredients here. Add, remove, and manage your
         pantry like a pro.
@@ -76,7 +76,7 @@ export default function PantryPage() {
       {/* Input Form */}
       <form
         onSubmit={addItem}
-        className="flex gap-3 mb-8 bg-white p-3 rounded-2xl shadow-sm border border-slate-200"
+        className="flex gap-3 mb-8 bg-white p-3 rounded-2xl shadow-stamp-sm border border-slate-200"
       >
         <input
           type="text"
@@ -105,7 +105,7 @@ export default function PantryPage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.2 }}
-                  className="flex justify-between items-center p-4 rounded-xl bg-emerald-50 border border-slate-200 text-slate-700 shadow-sm"
+                  className="flex justify-between items-center p-4 rounded-xl bg-emerald-50 border border-slate-200 text-slate-700 shadow-stamp-sm"
                 >
                   <span className="font-medium">{item.name}</span>
                   <button
