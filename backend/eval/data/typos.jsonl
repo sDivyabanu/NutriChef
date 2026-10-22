@@ -1,0 +1,60 @@
+{"id": "t01", "split": "dev", "word": "tomatos", "expect": "tomato|tomatoes|tomatos"}
+{"id": "t02", "split": "dev", "word": "onoin", "expect": "onion"}
+{"id": "t03", "split": "dev", "word": "garlc", "expect": "garlic"}
+{"id": "t04", "split": "dev", "word": "panner", "expect": "paneer"}
+{"id": "t05", "split": "dev", "word": "capsicm", "expect": "capsicum"}
+{"id": "t06", "split": "dev", "word": "brocoli", "expect": "broccoli"}
+{"id": "t07", "split": "dev", "word": "spinnach", "expect": "spinach"}
+{"id": "t08", "split": "dev", "word": "chikpeas", "expect": "chickpeas"}
+{"id": "t09", "split": "dev", "word": "vegitarian", "expect": "vegetarian|vegitarian"}
+{"id": "t10", "split": "dev", "word": "cinamon", "expect": "cinnamon"}
+{"id": "t11", "split": "dev", "word": "corriander", "expect": "coriander"}
+{"id": "t12", "split": "dev", "word": "mushroms", "expect": "mushrooms|mushroom"}
+{"id": "t13", "split": "dev", "word": "tumeric", "expect": "turmeric"}
+{"id": "t14", "split": "dev", "word": "brekfast", "expect": "breakfast"}
+{"id": "t15", "split": "dev", "word": "potatos", "expect": "potatoes|potatos|potato"}
+{"id": "t16", "split": "dev", "word": "lettuse", "expect": "lettuce"}
+{"id": "t17", "split": "dev", "word": "aubergene", "expect": "aubergine"}
+{"id": "t18", "split": "dev", "word": "yoghourt", "expect": "yoghurt|yogurt"}
+{"id": "t19", "split": "dev", "word": "zuchini", "expect": "zucchini"}
+{"id": "t20", "split": "dev", "word": "parmesean", "expect": "parmesan"}
+{"id": "t21", "split": "test", "word": "cucmber", "expect": "cucumber"}
+{"id": "t22", "split": "test", "word": "tomatoe", "expect": "tomato|tomatoes"}
+{"id": "t23", "split": "test", "word": "avacado", "expect": "avocado"}
+{"id": "t24", "split": "test", "word": "cauliflour", "expect": "cauliflower"}
+{"id": "t25", "split": "test", "word": "chiken", "expect": "chicken"}
+{"id": "t26", "split": "test", "word": "lentills", "expect": "lentils"}
+{"id": "t27", "split": "test", "word": "cardamon", "expect": "cardamom"}
+{"id": "t28", "split": "test", "word": "basmatti", "expect": "basmati"}
+{"id": "t29", "split": "test", "word": "ginnger", "expect": "ginger"}
+{"id": "t30", "split": "test", "word": "desert", "expect": "desert|dessert", "note": "real word; correction optional"}
+{"id": "t31", "split": "test", "word": "spagetti", "expect": "spaghetti"}
+{"id": "t32", "split": "test", "word": "quinao", "expect": "quinoa"}
+{"id": "t33", "split": "test", "word": "cumminn", "expect": "cumin"}
+{"id": "t34", "split": "test", "word": "pinapple", "expect": "pineapple"}
+{"id": "t35", "split": "test", "word": "glutenfree", "expect": "glutenfree|gluten"}
+{"id": "t36", "split": "test", "word": "bananna", "expect": "banana"}
+{"id": "t37", "split": "test", "word": "mozarella", "expect": "mozzarella"}
+{"id": "t38", "split": "test", "word": "rasberries", "expect": "raspberries"}
+{"id": "t39", "split": "test", "word": "egplant", "expect": "eggplant"}
+{"id": "t40", "split": "test", "word": "carots", "expect": "carrots"}
+{"id": "c01", "split": "dev", "word": "filling", "expect": "filling", "must_not_change": true}
+{"id": "c02", "split": "dev", "word": "dates", "expect": "dates", "must_not_change": true}
+{"id": "c03", "split": "dev", "word": "masala", "expect": "masala", "must_not_change": true}
+{"id": "c04", "split": "dev", "word": "biryani", "expect": "biryani", "must_not_change": true}
+{"id": "c05", "split": "dev", "word": "light", "expect": "light", "must_not_change": true}
+{"id": "c06", "split": "dev", "word": "tikka", "expect": "tikka", "must_not_change": true}
+{"id": "c07", "split": "dev", "word": "kuzhambu", "expect": "kuzhambu", "must_not_change": true}
+{"id": "c08", "split": "dev", "word": "pannalam", "expect": "pannalam", "must_not_change": true}
+{"id": "c09", "split": "dev", "word": "calories", "expect": "calories", "must_not_change": true}
+{"id": "c10", "split": "dev", "word": "weeknight", "expect": "weeknight", "must_not_change": true}
+{"id": "c11", "split": "test", "word": "gochujang", "expect": "gochujang", "must_not_change": true}
+{"id": "c12", "split": "test", "word": "shakshuka", "expect": "shakshuka", "must_not_change": true}
+{"id": "c13", "split": "test", "word": "upma", "expect": "upma", "must_not_change": true}
+{"id": "c14", "split": "test", "word": "kid", "expect": "kid", "must_not_change": true}
+{"id": "c15", "split": "test", "word": "airfryer", "expect": "airfryer", "must_not_change": true}
+{"id": "c16", "split": "test", "word": "protein", "expect": "protein", "must_not_change": true}
+{"id": "c17", "split": "test", "word": "poriyal", "expect": "poriyal", "must_not_change": true}
+{"id": "c18", "split": "test", "word": "frittata", "expect": "frittata", "must_not_change": true}
+{"id": "c19", "split": "test", "word": "tofu", "expect": "tofu", "must_not_change": true}
+{"id": "c20", "split": "test", "word": "spicy", "expect": "spicy", "must_not_change": true}
