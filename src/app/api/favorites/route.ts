@@ -1,141 +1,77 @@
 export const runtime = "nodejs";
 
 import { NextResponse } from "next/server";
-import { cookies } from "next/headers";
-import { createClient } from "@supabase/supabase-js";
+import pool from "@/lib/db";
+import { getUser } from "@/lib/getUser";
 
-// Initialize Supabase (server-side)
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY! // use service key only on server
-);
+// Favorites are stored in "UserRecipe" with tag = 'favorite'.
+// recipe_ref links to the recipe id in the local NLP recipe store (nullable for older rows).
 
-// Add recipe to favorites
 export async function POST(req: Request) {
   try {
-    const cookieStore = await cookies();
-    const cookieUserId = cookieStore.get("userId")?.value;
-    const { userId: bodyUserId, recipe } = await req.json();
-
-    const userId = bodyUserId || cookieUserId;
-
-    if (!userId) {
-      return NextResponse.json(
-        { success: false, error: "User not logged in" },
-        { status: 401 }
-      );
+    const user = await getUser();
+    if (!user) {
+      return NextResponse.json({ success: false, error: "User not logged in" }, { status: 401 });
     }
-
+    const { recipe } = await req.json();
     if (!recipe || !recipe.recipe_name) {
-      return NextResponse.json(
-        { success: false, error: "Invalid recipe data" },
-        { status: 400 }
-      );
+      return NextResponse.json({ success: false, error: "Invalid recipe data" }, { status: 400 });
     }
-
-    const { data, error } = await supabase
-      .from("UserRecipe")
-      .insert([
-        {
-          user_id: userId,
-          recipe_name: recipe.recipe_name,
-          calories: recipe.calories ?? null,
-          protein: recipe.protein ?? null,
-          fat: recipe.fat ?? null,
-          carbs: recipe.carbs ?? null,
-          instructions: recipe.instructions ?? null,
-          tag: "favorite",
-        },
-      ])
-      .select();
-
-    if (error) {
-      console.error("Supabase insert error:", error);
-      return NextResponse.json(
-        { success: false, error: error.message },
-        { status: 500 }
+    const recipeRef = recipe.recipe_ref != null ? String(recipe.recipe_ref) : null;
+    if (recipeRef) {
+      const dup = await pool.query(
+        `SELECT * FROM "UserRecipe" WHERE user_id = $1 AND tag = 'favorite' AND recipe_ref = $2 LIMIT 1`,
+        [user.id, recipeRef]
       );
+      if (dup.rows[0]) return NextResponse.json({ success: true, recipe: dup.rows[0], existing: true });
     }
-
-    return NextResponse.json({
-      success: true,
-      recipe: data?.[0] || null,
-    });
+    const toInt = (v: unknown) => (typeof v === "number" && Number.isFinite(v) ? Math.round(v) : null);
+    const { rows } = await pool.query(
+      `INSERT INTO "UserRecipe" (user_id, recipe_name, calories, protein, fat, carbs, instructions, tag, recipe_ref)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, 'favorite', $8) RETURNING *`,
+      [
+        user.id,
+        String(recipe.recipe_name).slice(0, 300),
+        toInt(recipe.calories),
+        toInt(recipe.protein),
+        toInt(recipe.fat),
+        toInt(recipe.carbs),
+        recipe.instructions ?? null,
+        recipeRef,
+      ]
+    );
+    return NextResponse.json({ success: true, recipe: rows[0] ?? null });
   } catch (err) {
     console.error("Add favorite error:", err);
-    return NextResponse.json(
-      { success: false, error: (err as Error).message },
-      { status: 500 }
-    );
+    return NextResponse.json({ success: false, error: "Failed to add favorite" }, { status: 500 });
   }
 }
 
-// ✅ Get all favorites for the logged-in user
-export async function GET(req: Request) {
+export async function GET() {
   try {
-    const cookieStore = await cookies();
-    const userId = cookieStore.get("userId")?.value;
-
-    if (!userId) {
-      return NextResponse.json(
-        { error: "User not logged in" },
-        { status: 401 }
-      );
-    }
-
-    const { data, error } = await supabase
-      .from("UserRecipe")
-      .select("*")
-      .eq("user_id", userId)
-      .eq("tag", "favorite");
-
-    if (error) throw error;
-
-    return NextResponse.json({ recipes: data || [] });
+    const user = await getUser();
+    if (!user) return NextResponse.json({ error: "User not logged in" }, { status: 401 });
+    const { rows } = await pool.query(
+      `SELECT * FROM "UserRecipe" WHERE user_id = $1 AND tag = 'favorite' ORDER BY created_at DESC`,
+      [user.id]
+    );
+    return NextResponse.json({ recipes: rows });
   } catch (err) {
     console.error("Fetch favorites error:", err);
-    return NextResponse.json(
-      { error: (err as Error).message },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Failed to load favorites" }, { status: 500 });
   }
 }
 
-// ✅ Delete a favorite by ID
 export async function DELETE(req: Request) {
   try {
-    const cookieStore = await cookies();
-    const userId = cookieStore.get("userId")?.value;
+    const user = await getUser();
+    if (!user) return NextResponse.json({ error: "User not logged in" }, { status: 401 });
     const { id } = await req.json();
-
-    if (!userId) {
-      return NextResponse.json(
-        { error: "User not logged in" },
-        { status: 401 }
-      );
-    }
-
-    if (!id) {
-      return NextResponse.json(
-        { error: "Missing recipe ID" },
-        { status: 400 }
-      );
-    }
-
-    const { error } = await supabase
-      .from("UserRecipe")
-      .delete()
-      .eq("id", id)
-      .eq("user_id", userId);
-
-    if (error) throw error;
-
+    if (!id) return NextResponse.json({ error: "Missing recipe ID" }, { status: 400 });
+    await pool.query(`DELETE FROM "UserRecipe" WHERE id = $1 AND user_id = $2`, [id, user.id]);
     return NextResponse.json({ success: true });
   } catch (err) {
     console.error("Delete favorite error:", err);
-    return NextResponse.json(
-      { success: false, error: (err as Error).message },
-      { status: 500 }
-    );
+    return NextResponse.json({ success: false, error: "Failed to delete favorite" }, { status: 500 });
   }
 }
