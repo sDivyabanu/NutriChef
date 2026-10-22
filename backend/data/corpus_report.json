@@ -1,0 +1,21 @@
+{
+  "source_csv": "13k-recipes.csv",
+  "sha256": "099eb2f9bdad5eb16c038392b386e3638a4757b6d7fe9e6bcf92d31d3a2d9d9b",
+  "counts": {
+    "csv_rows": 13501,
+    "skipped_exact_duplicates": 14,
+    "missing_instructions": 2,
+    "skipped_no_ingredients": 12,
+    "imported": 13475,
+    "titles_shared_by_multiple_recipes": 158
+  },
+  "fields_absent_in_source": [
+    "nutrition",
+    "servings",
+    "cooking_time",
+    "cuisine",
+    "meal_type",
+    "diet_labels",
+    "images"
+  ]
+}
