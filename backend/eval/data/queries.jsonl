@@ -1,0 +1,65 @@
+{"id": "q001", "split": "dev", "text": "I have tomatoes, rice and onions. What can I cook?", "intent": "find_by_ingredients"}
+{"id": "q002", "split": "dev", "text": "Suggest a spicy vegetarian dinner under 30 minutes.", "intent": "search", "diets": ["vegetarian"], "meal_types": ["dinner"], "max_time_min": 30, "qualities": ["spicy"]}
+{"id": "q003", "split": "dev", "text": "I want something filling without meat.", "intent": "search", "excluded_groups": ["meat"], "qualities": ["filling"]}
+{"id": "q004", "split": "dev", "text": "Find a high-protein breakfast under 350 calories.", "intent": "search", "meal_types": ["breakfast"], "nutrition": [["calories", "<=", 350]], "qualities": ["high-protein"]}
+{"id": "q005", "split": "dev", "text": "Give me South Indian recipes without peanuts.", "intent": "search", "cuisines": ["south indian"], "excluded_groups": ["peanut"]}
+{"id": "q006", "split": "dev", "text": "What can I prepare using paneer and capsicum?", "intent": "find_by_ingredients"}
+{"id": "q007", "split": "dev", "text": "Find something similar to fried rice but with more vegetables.", "intent": "similar", "similar_to": "fried rice"}
+{"id": "q008", "split": "dev", "text": "Breakfast with at least 20g protein", "intent": "search", "meal_types": ["breakfast"], "nutrition": [["protein_g", ">=", 20]]}
+{"id": "q009", "split": "dev", "text": "Dinner under 400 calories", "intent": "search", "meal_types": ["dinner"], "nutrition": [["calories", "<=", 400]]}
+{"id": "q010", "split": "dev", "text": "High-fibre vegetarian meals", "intent": "search", "diets": ["vegetarian"], "qualities": ["high-fibre"]}
+{"id": "q011", "split": "dev", "text": "Low-oil recipes", "intent": "search", "qualities": ["low-oil"]}
+{"id": "q012", "split": "dev", "text": "Recipes without dairy", "intent": "search", "excluded_groups": ["dairy"]}
+{"id": "q013", "split": "dev", "text": "Create a spicy South Indian vegetarian dinner using rice, tomatoes and onions in under 30 minutes", "intent": "generate", "diets": ["vegetarian"], "cuisines": ["south indian"], "meal_types": ["dinner"], "max_time_min": 30}
+{"id": "q014", "split": "dev", "text": "Make this vegan", "intent": "modify", "diets": ["vegan"]}
+{"id": "q015", "split": "dev", "text": "Replace paneer with tofu", "intent": "modify"}
+{"id": "q016", "split": "dev", "text": "Plan my dinners for the week, vegetarian", "intent": "meal_plan", "diets": ["vegetarian"]}
+{"id": "q017", "split": "dev", "text": "quick italian pasta for two", "intent": "search", "cuisines": ["italian"], "qualities": ["quick"], "servings": 2}
+{"id": "q018", "split": "dev", "text": "gluten free and dairy free dessert", "intent": "search", "diets": ["gluten-free", "dairy-free"], "meal_types": ["dessert"]}
+{"id": "q019", "split": "dev", "text": "Paneer vechu spicy dinner suggest pannu", "intent": "find_by_ingredients", "meal_types": ["dinner"], "qualities": ["spicy"], "language": "ta-en"}
+{"id": "q020", "split": "dev", "text": "hello", "intent": "greeting"}
+{"id": "q021", "split": "dev", "text": "Thai curry ready in 45 mins with tofu", "intent": "search", "cuisines": ["thai"], "max_time_min": 45}
+{"id": "q022", "split": "dev", "text": "something", "intent": "search", "clarification": true}
+{"id": "q023", "split": "dev", "text": "vegan paneer curry", "intent": "search", "diets": ["vegan"]}
+{"id": "q024", "split": "dev", "text": "low carb dinner with salmon", "intent": "search", "meal_types": ["dinner"], "qualities": ["low-carb"]}
+{"id": "q025", "split": "dev", "text": "mexican lunch under half an hour", "intent": "search", "cuisines": ["mexican"], "meal_types": ["lunch"], "max_time_min": 30}
+{"id": "q026", "split": "dev", "text": "eggless chocolate cake", "intent": "search", "diets": ["egg-free"]}
+{"id": "q027", "split": "dev", "text": "non veg starters for a party", "intent": "search", "diets": ["non-vegetarian"], "meal_types": ["appetizer"]}
+{"id": "q028", "split": "dev", "text": "kaalai tiffin without onion", "intent": "search", "meal_types": ["breakfast"], "language": "ta-en"}
+{"id": "q029", "split": "dev", "text": "generate a new recipe with quinoa and kale", "intent": "generate"}
+{"id": "q030", "split": "dev", "text": "an easy dessert with less than 15g sugar", "intent": "search", "meal_types": ["dessert"], "qualities": ["easy"]}
+{"id": "q031", "split": "dev", "text": "dishes like butter chicken but vegetarian", "intent": "similar", "similar_to": "butter chicken", "diets": ["vegetarian"]}
+{"id": "q032", "split": "dev", "text": "vegetarian and non vegetarian", "intent": "search", "conflict": true}
+{"id": "q033", "split": "dev", "text": "jain recipes for lunch", "intent": "search", "diets": ["jain"], "meal_types": ["lunch"]}
+{"id": "q034", "split": "dev", "text": "healthy snack for kids, nut-free", "intent": "search", "diets": ["nut-free"], "meal_types": ["snack"], "qualities": ["healthy"]}
+{"id": "q035", "split": "dev", "text": "1 hour roast dinner", "intent": "search", "meal_types": ["dinner"], "max_time_min": 60}
+{"id": "q101", "split": "test", "text": "What can I make with eggs, cheese and spinach?", "intent": "find_by_ingredients"}
+{"id": "q102", "split": "test", "text": "a light vegan lunch in 20 minutes", "intent": "search", "diets": ["vegan"], "meal_types": ["lunch"], "max_time_min": 20, "qualities": ["light"]}
+{"id": "q103", "split": "test", "text": "Korean dinner without pork", "intent": "search", "cuisines": ["korean"], "meal_types": ["dinner"]}
+{"id": "q104", "split": "test", "text": "breakfast under 300 kcal", "intent": "search", "meal_types": ["breakfast"], "nutrition": [["calories", "<=", 300]]}
+{"id": "q105", "split": "test", "text": "protein rich vegetarian snack", "intent": "search", "diets": ["vegetarian"], "meal_types": ["snack"], "qualities": ["high-protein"]}
+{"id": "q106", "split": "test", "text": "Make it for 4 people", "intent": "modify", "servings": 4}
+{"id": "q107", "split": "test", "text": "Swap the butter for olive oil", "intent": "modify"}
+{"id": "q108", "split": "test", "text": "3-day meal plan with breakfast and dinner", "intent": "meal_plan", "meal_types": ["breakfast", "dinner"]}
+{"id": "q109", "split": "test", "text": "greek salad without olives", "intent": "search", "cuisines": ["greek"], "meal_types": ["salad"]}
+{"id": "q110", "split": "test", "text": "pescatarian dinner ideas", "intent": "search", "diets": ["pescatarian"], "meal_types": ["dinner"]}
+{"id": "q111", "split": "test", "text": "something similar to pad thai", "intent": "similar", "similar_to": "pad thai"}
+{"id": "q112", "split": "test", "text": "invent a fusion taco with paneer", "intent": "generate"}
+{"id": "q113", "split": "test", "text": "lactose intolerant friendly soup", "intent": "search", "diets": ["dairy-free"], "meal_types": ["soup"]}
+{"id": "q114", "split": "test", "text": "iravu saapadu spicy ah, chicken illama", "intent": "search", "meal_types": ["dinner"], "qualities": ["spicy"], "language": "ta-en"}
+{"id": "q115", "split": "test", "text": "dessert with no more than 250 calories", "intent": "search", "meal_types": ["dessert"], "nutrition": [["calories", "<=", 250]]}
+{"id": "q116", "split": "test", "text": "Chinese stir fry under 25 minutes, no peanuts", "intent": "search", "cuisines": ["chinese"], "max_time_min": 25, "excluded_groups": ["peanut"]}
+{"id": "q117", "split": "test", "text": "thanks!", "intent": "greeting"}
+{"id": "q118", "split": "test", "text": "high fiber breakfast with oats", "intent": "search", "meal_types": ["breakfast"], "qualities": ["high-fibre"]}
+{"id": "q119", "split": "test", "text": "mild kid friendly pasta", "intent": "search", "qualities": ["mild"]}
+{"id": "q120", "split": "test", "text": "vegan cheesecake", "intent": "search", "diets": ["vegan"]}
+{"id": "q121", "split": "test", "text": "Make the recipe less spicy", "intent": "modify"}
+{"id": "q122", "split": "test", "text": "middle eastern dinner with chickpeas, gluten-free", "intent": "search", "cuisines": ["middle eastern"], "meal_types": ["dinner"], "diets": ["gluten-free"]}
+{"id": "q123", "split": "test", "text": "at least 30 g protein lunch", "intent": "search", "meal_types": ["lunch"], "nutrition": [["protein_g", ">=", 30]]}
+{"id": "q124", "split": "test", "text": "two hour slow braise", "intent": "search", "max_time_min": 120}
+{"id": "q125", "split": "test", "text": "dairy-free vegan pancakes", "intent": "search", "diets": ["dairy-free", "vegan"]}
+{"id": "q126", "split": "test", "text": "weekly vegan meal plan", "intent": "meal_plan", "diets": ["vegan"]}
+{"id": "q127", "split": "test", "text": "salmon recipes for a pescatarian, no dill", "intent": "search", "diets": ["pescatarian"]}
+{"id": "q128", "split": "test", "text": "kathirikai poriyal", "intent": "search", "language": "ta-en"}
+{"id": "q129", "split": "test", "text": "food", "intent": "search", "clarification": true}
+{"id": "q130", "split": "test", "text": "creamy tomato soup without cream", "intent": "search", "meal_types": ["soup"], "qualities": ["creamy"]}
