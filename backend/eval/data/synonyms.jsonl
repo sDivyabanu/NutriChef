@@ -1,0 +1,64 @@
+{"id": "s01", "split": "dev", "surface": "capsicum", "canonical": "bell pepper", "kind": "regional"}
+{"id": "s02", "split": "dev", "surface": "brinjal", "canonical": "eggplant", "kind": "regional"}
+{"id": "s03", "split": "dev", "surface": "aubergines", "canonical": "eggplant", "kind": "british"}
+{"id": "s04", "split": "dev", "surface": "curd", "canonical": "yogurt", "kind": "regional"}
+{"id": "s05", "split": "dev", "surface": "coriander leaves", "canonical": "cilantro", "kind": "regional"}
+{"id": "s06", "split": "dev", "surface": "spring onions", "canonical": "spring onion", "kind": "plural"}
+{"id": "s07", "split": "dev", "surface": "garbanzo beans", "canonical": "chickpea", "kind": "regional"}
+{"id": "s08", "split": "dev", "surface": "maida", "canonical": "flour", "kind": "regional"}
+{"id": "s09", "split": "dev", "surface": "atta", "canonical": "whole wheat flour", "kind": "regional"}
+{"id": "s10", "split": "dev", "surface": "besan", "canonical": "chickpea flour", "kind": "regional"}
+{"id": "s11", "split": "dev", "surface": "jeera", "canonical": "cumin", "kind": "regional"}
+{"id": "s12", "split": "dev", "surface": "haldi", "canonical": "turmeric", "kind": "regional"}
+{"id": "s13", "split": "dev", "surface": "thakkali", "canonical": "tomato", "kind": "tamil"}
+{"id": "s14", "split": "dev", "surface": "vengayam", "canonical": "onion", "kind": "tamil"}
+{"id": "s15", "split": "dev", "surface": "kathirikai", "canonical": "eggplant", "kind": "tamil"}
+{"id": "s16", "split": "dev", "surface": "courgettes", "canonical": "zucchini", "kind": "british"}
+{"id": "s17", "split": "dev", "surface": "prawns", "canonical": "shrimp", "kind": "british"}
+{"id": "s18", "split": "dev", "surface": "rocket", "canonical": "arugula", "kind": "british"}
+{"id": "s19", "split": "dev", "surface": "icing sugar", "canonical": "powdered sugar", "kind": "british"}
+{"id": "s20", "split": "dev", "surface": "double cream", "canonical": "cream", "kind": "british"}
+{"id": "s21", "split": "dev", "surface": "tomatoes", "canonical": "tomato", "kind": "plural"}
+{"id": "s22", "split": "dev", "surface": "potatoes", "canonical": "potato", "kind": "plural"}
+{"id": "s23", "split": "dev", "surface": "chillies", "canonical": "chili pepper", "kind": "spelling"}
+{"id": "s24", "split": "dev", "surface": "ladies finger", "canonical": "okra", "kind": "regional"}
+{"id": "s25", "split": "dev", "surface": "karuveppilai", "canonical": "curry leaves", "kind": "tamil"}
+{"id": "s26", "split": "dev", "surface": "groundnuts", "canonical": "peanut", "kind": "regional"}
+{"id": "s27", "split": "dev", "surface": "cornflour", "canonical": "cornstarch", "kind": "british"}
+{"id": "s28", "split": "dev", "surface": "bicarbonate of soda", "canonical": "baking soda", "kind": "british"}
+{"id": "s29", "split": "dev", "surface": "jaggery", "canonical": "jaggery", "kind": "identity"}
+{"id": "s30", "split": "dev", "surface": "green chilli", "canonical": "chili pepper", "kind": "regional"}
+{"id": "s31", "split": "test", "surface": "bhindi", "canonical": "okra", "kind": "regional"}
+{"id": "s32", "split": "test", "surface": "palak", "canonical": "spinach", "kind": "regional"}
+{"id": "s33", "split": "test", "surface": "aloo", "canonical": "potato", "kind": "regional"}
+{"id": "s34", "split": "test", "surface": "gobi", "canonical": "cauliflower", "kind": "regional"}
+{"id": "s35", "split": "test", "surface": "methi leaves", "canonical": "fenugreek leaves", "kind": "regional"}
+{"id": "s36", "split": "test", "surface": "dhania powder", "canonical": "coriander seed", "kind": "regional"}
+{"id": "s37", "split": "test", "surface": "imli", "canonical": "tamarind", "kind": "regional"}
+{"id": "s38", "split": "test", "surface": "toor dal", "canonical": "toor dal", "kind": "identity"}
+{"id": "s39", "split": "test", "surface": "moong dal", "canonical": "moong dal", "kind": "identity"}
+{"id": "s40", "split": "test", "surface": "urulaikizhangu", "canonical": "potato", "kind": "tamil"}
+{"id": "s41", "split": "test", "surface": "vendakkai", "canonical": "okra", "kind": "tamil"}
+{"id": "s42", "split": "test", "surface": "poondu", "canonical": "garlic", "kind": "tamil"}
+{"id": "s43", "split": "test", "surface": "inji", "canonical": "ginger", "kind": "tamil"}
+{"id": "s44", "split": "test", "surface": "thengai", "canonical": "coconut", "kind": "tamil"}
+{"id": "s45", "split": "test", "surface": "murungakkai", "canonical": "drumstick", "kind": "tamil"}
+{"id": "s46", "split": "test", "surface": "beetroot", "canonical": "beet", "kind": "british"}
+{"id": "s47", "split": "test", "surface": "swede", "canonical": "turnip", "kind": "british"}
+{"id": "s48", "split": "test", "surface": "mangetout", "canonical": "snow pea", "kind": "british"}
+{"id": "s49", "split": "test", "surface": "minced beef", "canonical": "beef", "kind": "british"}
+{"id": "s50", "split": "test", "surface": "caster sugar", "canonical": "sugar", "kind": "british"}
+{"id": "s51", "split": "test", "surface": "plain flour", "canonical": "flour", "kind": "british"}
+{"id": "s52", "split": "test", "surface": "single cream", "canonical": "cream", "kind": "british"}
+{"id": "s53", "split": "test", "surface": "berries", "canonical": "berry", "kind": "plural"}
+{"id": "s54", "split": "test", "surface": "leaves of mint", "canonical": "mint", "kind": "paraphrase"}
+{"id": "s55", "split": "test", "surface": "scallions", "canonical": "spring onion", "kind": "regional"}
+{"id": "s56", "split": "test", "surface": "bean curd", "canonical": "tofu", "kind": "regional"}
+{"id": "s57", "split": "test", "surface": "cilantro", "canonical": "cilantro", "kind": "identity"}
+{"id": "s58", "split": "test", "surface": "dhal", "canonical": "lentil", "kind": "spelling"}
+{"id": "s59", "split": "test", "surface": "chilli flakes", "canonical": "red pepper flakes", "kind": "regional"}
+{"id": "s60", "split": "test", "surface": "kadalai maavu", "canonical": "chickpea flour", "kind": "tamil"}
+{"id": "s61", "split": "test", "surface": "nei", "canonical": "ghee", "kind": "tamil"}
+{"id": "s62", "split": "test", "surface": "kara mani", "canonical": "black-eyed pea", "kind": "tamil"}
+{"id": "s63", "split": "test", "surface": "sweetcorn", "canonical": "corn", "kind": "british"}
+{"id": "s64", "split": "test", "surface": "pak choi", "canonical": "bok choy", "kind": "british"}
