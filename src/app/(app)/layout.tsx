@@ -3,16 +3,31 @@
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import FloatingChat from "@/components/chat/FloatingChat";
+import { Logo } from "@/components/bento/Brand";
+
+// Assistant lives in the floating chat; Generate stays reachable at /generate but is not linked here.
+const NAV: [string, string][] = [
+  ["Home", "/dashboard"],
+  ["Search", "/search"],
+  ["Ingredients", "/ingredients"],
+  ["Recipes", "/recipes"],
+  ["Meal plan", "/meal-plan"],
+  ["Pantry", "/pantry"],
+  ["Favourites", "/favorites"],
+  ["Preferences", "/preferences"],
+  ["Track", "/track"],
+];
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [user, setUser] = useState<{ name: string } | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [user, setUser] = useState<{ name?: string; full_name?: string } | null>(null);
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const pathname = usePathname();
 
-  // Fetch logged-in user info
   useEffect(() => {
     async function fetchUser() {
       try {
@@ -30,16 +45,15 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     fetchUser();
   }, [router]);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setShowMenu(false);
-      }
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) setShowMenu(false);
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  useEffect(() => setMenuOpen(false), [pathname]);
 
   const handleLogout = async () => {
     await fetch("/api/logout");
@@ -47,111 +61,97 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     router.push("/login");
   };
 
-  const handleProfileClick = () => setShowMenu(prev => !prev);
-
-  const getInitial = (user: { name?: string; full_name?: string; email?: string } | null) => {
-    if (user?.name) return user.name.charAt(0).toUpperCase();
-    if (user?.full_name) return user.full_name.charAt(0).toUpperCase();
-    if (user?.email) return user.email.charAt(0).toUpperCase();
-    return "?";
-  };
+  const name = user?.full_name || user?.name || "";
+  const initial = name ? name.charAt(0).toUpperCase() : "?";
+  const active = (href: string) => pathname === href || pathname?.startsWith(href + "/");
 
   return (
-    <main className="flex min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-100">
-      {/* Sidebar */}
-      <aside
-        className={`fixed top-0 left-0 h-screen w-64 bg-white/70 backdrop-blur-lg border-r border-emerald-100 shadow-md p-6 flex flex-col justify-between
-          transform transition-transform duration-300 z-50
-          ${sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}`}
-      >
-        <div>
-          <h2 className="text-2xl font-extrabold text-emerald-700 mb-8 tracking-tight">
-            🥗 NutriChef
-          </h2>
-          <nav className="flex flex-col gap-5 text-slate-700 font-medium">
-            {[
-              ["📊 Dashboard", "/dashboard"],
-              ["🥦 Ingredients", "/ingredients"],
-              ["🍲 Recipes", "/recipes"],
-              ["🗄️ Pantry", "/pantry"],
-              ["⭐ Favorites", "/favorites"],
-              ["📈 Track", "/track"],
-              ["⚙️ Settings", "/settings"],
-            ].map(([label, href]) => (
-              <Link
-                key={href}
-                href={href}
-                className="transition hover:text-emerald-600 hover:translate-x-1"
-              >
-                {label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-        <div className="text-xs text-slate-500 mt-6">© 2025 NutriChef</div>
-      </aside>
-
-      {/* Overlay for mobile */}
-      {sidebarOpen && (
-        <div
-          className="fixed inset-0 bg-black/30 backdrop-blur-[2px] md:hidden z-40"
-          onClick={() => setSidebarOpen(false)}
-        />
-      )}
-
-      {/* Main Section */}
-      <section className="flex-1 flex flex-col">
-        {/* Top Bar */}
-        <header className="flex justify-between items-center px-6 py-4 border-b border-emerald-100 bg-white/70 backdrop-blur-md shadow-sm sticky top-0 z-40">
-          {/* Menu button + logo */}
-          <div className="flex items-center gap-3">
+    <div className="kitchen-shell min-h-screen">
+      <a href="#main-content" className="skip-link">Skip to content</a>
+      <header className="sticky top-0 z-40 bg-cream/90 backdrop-blur-sm">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-4 pb-3 flex items-stretch gap-3">
+          <nav className="kitchen-outline flex-1 min-w-0 flex items-center gap-4 px-4 sm:px-5 py-2.5" aria-label="Main">
+            <Logo href="/dashboard" />
+            <ul className="hidden xl:flex items-center gap-0.5 min-w-0 ml-auto">
+              {NAV.map(([label, href]) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    aria-current={active(href) ? "page" : undefined}
+                    className={`block whitespace-nowrap rounded-full px-3 py-1.5 text-[14px] font-medium transition-colors ${
+                      active(href) ? "bg-coral text-ink" : "text-ink/75 hover:bg-blush hover:text-ink"
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
             <button
-              className="p-2 rounded-lg hover:bg-emerald-100 text-emerald-700 transition"
-              onClick={() => setSidebarOpen(!sidebarOpen)}
+              className="xl:hidden ml-auto p-2 rounded-full text-ink hover:bg-blush"
+              onClick={() => setMenuOpen((o) => !o)}
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-nav"
             >
-              {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
+              {menuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
-            <h1 className="text-2xl font-extrabold text-emerald-700 drop-shadow-sm">
-              NutriChef
-            </h1>
-          </div>
+          </nav>
 
-          {/* Profile Avatar */}
           <div className="relative" ref={menuRef}>
             <button
-              onClick={handleProfileClick}
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-emerald-500 text-white font-bold hover:bg-emerald-600 shadow-md transition"
-              title="Profile"
+              onClick={() => setShowMenu((p) => !p)}
+              className="account-button h-full min-h-[52px] rounded-lg bg-coral px-4 sm:px-6 font-bold text-ink hover:bg-salmon transition flex items-center gap-2"
+              aria-haspopup="menu"
+              aria-expanded={showMenu}
+              aria-label="Account menu"
             >
-              {getInitial(user)}
+              <span className="h-8 w-8 rounded-full bg-cream/70 flex items-center justify-center text-sm">{initial}</span>
+              <span className="hidden sm:inline max-w-[9rem] truncate">{name || "Account"}</span>
             </button>
-
             {showMenu && (
-              <div className="absolute right-0 mt-2 w-48 bg-white/90 backdrop-blur-md shadow-xl rounded-xl border border-emerald-100 py-3 z-50">
-                <div className="text-center">
-                  <p className="text-slate-700 font-semibold">{user?.name}</p>
-                </div>
-                <hr className="my-2 border-slate-200" />
-                <button
-                  onClick={() => router.push("/profile")}
-                  className="block w-full text-left px-4 py-2 text-sm text-slate-600 hover:bg-emerald-50 transition"
-                >
-                  Edit Profile
+              <div role="menu" className="absolute right-0 mt-2 w-52 rounded-lg border border-coral/40 bg-cream shadow-xl py-2 z-50 fade-up">
+                <button role="menuitem" onClick={() => router.push("/profile")} className="block w-full text-left px-4 py-2 text-sm text-ink hover:bg-blush">
+                  Edit profile
                 </button>
-                <button
-                  onClick={handleLogout}
-                  className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition"
-                >
-                  Logout
+                <button role="menuitem" onClick={() => router.push("/settings")} className="block w-full text-left px-4 py-2 text-sm text-ink hover:bg-blush">
+                  Settings
+                </button>
+                <button role="menuitem" onClick={handleLogout} className="block w-full text-left px-4 py-2 text-sm text-rose-700 hover:bg-rose-50">
+                  Log out
                 </button>
               </div>
             )}
           </div>
-        </header>
+        </div>
 
-        {/* Page content */}
-        <div className="flex-1 p-8">{children}</div>
-      </section>
-    </main>
+        {menuOpen && (
+          <div id="mobile-nav" className="xl:hidden mx-4 sm:mx-6 mb-3 kitchen-outline p-2 fade-up">
+            <ul className="grid grid-cols-2 sm:grid-cols-3 gap-1">
+              {NAV.map(([label, href]) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    aria-current={active(href) ? "page" : undefined}
+                    className={`block rounded-2xl px-4 py-2.5 text-sm font-medium ${active(href) ? "bg-coral text-ink" : "text-ink hover:bg-blush"}`}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </header>
+
+      <main id="main-content" className="mx-auto max-w-7xl px-4 sm:px-6 pb-28 min-w-0">
+        <div key={pathname} className="fade-up">
+          {children}
+        </div>
+      </main>
+
+      {/* Floating recipe assistant (single instance; persists across page navigation) */}
+      <FloatingChat />
+    </div>
   );
 }
