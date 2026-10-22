@@ -1,29 +1,25 @@
 import "./globals.css";
-import { Poppins } from "next/font/google";
+// Plus Jakarta Sans is bundled locally via @fontsource (imported in globals.css): no Google Fonts request.
+import { MotionConfig } from "@/components/MotionProvider";
 import PageWrapper from "@/components/PageWrapper";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
 export const metadata = {
-  title: "Nutrichef",
+  title: "NutriChef",
   description: "Smart recipe suggestions based on your ingredients & diet.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={poppins.className}>
-      <body className="bg-gradient-to-b from-emerald-50 via-white to-emerald-100 text-slate-800">
-        <PageWrapper>
-          <main className="flex-1">{children}</main>
+    <html lang="en">
+      <body className="bg-cream text-ink antialiased">
+        <MotionConfig><PageWrapper>
+          <div className="flex-1">{children}</div>
 
           {/* Footer */}
-          <footer className="text-center py-6 text-slate-500 text-sm border-t border-slate-200">
-            © {new Date().getFullYear()} Nutrichef. All rights reserved.
+          <footer className="site-copyright text-center py-6 text-slate-600 text-xs font-mono">
+            © {new Date().getFullYear()} NutriChef. All rights reserved.
           </footer>
-        </PageWrapper>
+        </PageWrapper></MotionConfig>
       </body>
     </html>
   );
