@@ -1,0 +1,434 @@
+{
+  "split": "test",
+  "timestamp": "2026-10-22 21:46",
+  "recipes": 13475,
+  "engine_build_seconds_warm_cache": 23.3,
+  "extraction": {
+    "n": 35,
+    "nutrichef_name_and_role": {
+      "precision": 0.894,
+      "recall": 0.916,
+      "f1": 0.905,
+      "tp": 76,
+      "fp": 9,
+      "fn": 7
+    },
+    "nutrichef_name_only": {
+      "precision": 0.929,
+      "recall": 0.952,
+      "f1": 0.94,
+      "tp": 79,
+      "fp": 6,
+      "fn": 4
+    },
+    "baseline_original_normalizer_name_only": {
+      "precision": 0.435,
+      "recall": 0.446,
+      "f1": 0.44,
+      "tp": 37,
+      "fp": 48,
+      "fn": 46
+    },
+    "baseline_spacy_ner_name_only": {
+      "precision": 0.105,
+      "recall": 0.024,
+      "f1": 0.039,
+      "tp": 2,
+      "fp": 17,
+      "fn": 81
+    },
+    "quantity_accuracy": 1.0,
+    "quantity_n": 12,
+    "exact_item_accuracy_by_tag": {
+      "allergy": {
+        "acc": 1.0,
+        "n": 1
+      },
+      "ambiguous": {
+        "acc": 0.5,
+        "n": 2
+      },
+      "bare-list": {
+        "acc": 1.0,
+        "n": 5
+      },
+      "dish-name": {
+        "acc": 1.0,
+        "n": 1
+      },
+      "list": {
+        "acc": 1.0,
+        "n": 2
+      },
+      "multiword": {
+        "acc": 1.0,
+        "n": 6
+      },
+      "negation": {
+        "acc": 0.6,
+        "n": 15
+      },
+      "quantity": {
+        "acc": 0.8,
+        "n": 5
+      },
+      "regional": {
+        "acc": 0.6,
+        "n": 5
+      },
+      "tamil": {
+        "acc": 1.0,
+        "n": 4
+      },
+      "typo": {
+        "acc": 0.75,
+        "n": 4
+      }
+    },
+    "errors": [
+      {
+        "id": "x105",
+        "text": "a curry with chick peas and spinach but no tomatoes",
+        "pred": [
+          [
+            "peas",
+            "required"
+          ],
+          [
+            "spinach",
+            "required"
+          ],
+          [
+            "tomato",
+            "excluded"
+          ]
+        ],
+        "expect": {
+          "required": [
+            "chickpea",
+            "spinach"
+          ],
+          "excluded": [
+            "tomato"
+          ]
+        }
+      },
+      {
+        "id": "x108",
+        "text": "I can't eat dairy, need a creamy pasta",
+        "pred": [
+          [
+            "dairy",
+            "excluded"
+          ],
+          [
+            "pasta",
+            "required"
+          ]
+        ],
+        "expect": {
+          "excluded": [
+            "dairy"
+          ],
+          "preferred": [
+            "pasta"
+          ]
+        }
+      },
+      {
+        "id": "x111",
+        "text": "no onion no garlic jain sabzi with cabbage",
+        "pred": [
+          [
+            "onion",
+            "excluded"
+          ],
+          [
+            "garlic",
+            "excluded"
+          ],
+          [
+            "vegetable",
+            "preferred"
+          ],
+          [
+            "cabbage",
+            "required"
+          ]
+        ],
+        "expect": {
+          "excluded": [
+            "onion",
+            "garlic"
+          ],
+          "preferred": [
+            "cabbage"
+          ]
+        }
+      },
+      {
+        "id": "x115",
+        "text": "vegetarian chili, no beans",
+        "pred": [
+          [
+            "chili pepper",
+            "preferred"
+          ],
+          [
+            "legume",
+            "excluded"
+          ]
+        ],
+        "expect": {
+          "excluded": [
+            "legume"
+          ]
+        }
+      },
+      {
+        "id": "x124",
+        "text": "nut-free cookies with oats",
+        "pred": [
+          [
+            "cookie",
+            "preferred"
+          ],
+          [
+            "oats",
+            "required"
+          ]
+        ],
+        "expect": {
+          "excluded": [
+            "nut"
+          ],
+          "required": [
+            "oats"
+          ]
+        }
+      },
+      {
+        "id": "x126",
+        "text": "no coriander, I want a tomato rasam",
+        "pred": [
+          [
+            "tomato",
+            "excluded"
+          ]
+        ],
+        "expect": {
+          "excluded": [
+            "cilantro"
+          ],
+          "preferred": [
+            "tomato"
+          ]
+        }
+      },
+      {
+        "id": "x129",
+        "text": "a dozen prawns, juice of 1 lemon and parsley",
+        "pred": [
+          [
+            "shrimp",
+            "available"
+          ],
+          [
+            "juice",
+            "available"
+          ],
+          [
+            "lemon",
+            "available"
+          ],
+          [
+            "parsley",
+            "available"
+          ]
+        ],
+        "expect": {
+          "available": [
+            "shrimp",
+            "lemon juice",
+            "parsley"
+          ]
+        }
+      }
+    ]
+  },
+  "queries": {
+    "n": 30,
+    "intent_accuracy": 0.967,
+    "field_accuracy": {
+      "diets": {
+        "acc": 1.0,
+        "n": 9
+      },
+      "meal_types": {
+        "acc": 1.0,
+        "n": 14
+      },
+      "max_time_min": {
+        "acc": 1.0,
+        "n": 3
+      },
+      "qualities": {
+        "acc": 1.0,
+        "n": 6
+      },
+      "cuisines": {
+        "acc": 1.0,
+        "n": 4
+      },
+      "nutrition": {
+        "acc": 0.667,
+        "n": 3
+      },
+      "servings": {
+        "acc": 1.0,
+        "n": 1
+      },
+      "similar_to": {
+        "acc": 1.0,
+        "n": 1
+      },
+      "excluded_groups": {
+        "acc": 1.0,
+        "n": 1
+      }
+    },
+    "tamil_english_detection": {
+      "acc": 1.0,
+      "n": 2
+    },
+    "clarification_detection": {
+      "acc": 1.0,
+      "n": 1
+    },
+    "conflict_detection": null,
+    "intent_confusions": {
+      "generate->search": 1
+    },
+    "errors": [
+      {
+        "id": "q112",
+        "text": "invent a fusion taco with paneer",
+        "errors": [
+          "intent search"
+        ]
+      },
+      {
+        "id": "q115",
+        "text": "dessert with no more than 250 calories",
+        "errors": [
+          "nutrition: got [['calories', '>=', 250.0]], expected [['calories', '<=', 250]]"
+        ]
+      }
+    ]
+  },
+  "synonyms": {
+    "n": 34,
+    "accuracy": 0.912,
+    "by_kind": {
+      "regional": {
+        "acc": 1.0,
+        "n": 10
+      },
+      "identity": {
+        "acc": 1.0,
+        "n": 3
+      },
+      "tamil": {
+        "acc": 0.889,
+        "n": 9
+      },
+      "british": {
+        "acc": 0.778,
+        "n": 9
+      },
+      "plural": {
+        "acc": 1.0,
+        "n": 1
+      },
+      "paraphrase": {
+        "acc": 1.0,
+        "n": 1
+      },
+      "spelling": {
+        "acc": 1.0,
+        "n": 1
+      }
+    },
+    "errors": [
+      {
+        "surface": "swede",
+        "expected": "turnip",
+        "got": null
+      },
+      {
+        "surface": "mangetout",
+        "expected": "snow pea",
+        "got": null
+      },
+      {
+        "surface": "kara mani",
+        "expected": "black-eyed pea",
+        "got": null
+      }
+    ]
+  },
+  "typos": {
+    "misspellings_corrected": {
+      "acc": 1.0,
+      "n": 20
+    },
+    "correct_words_left_unchanged": {
+      "acc": 1.0,
+      "n": 10
+    },
+    "errors": []
+  },
+  "retrieval": {
+    "n_queries": 15,
+    "k": 10,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "systems": {
+      "keyword": {
+        "p@5": 0.413,
+        "p@10": 0.373,
+        "mrr": 0.533,
+        "ndcg@10": 0.4,
+        "constraint_violation_rate@10": 0.5,
+        "latency_ms_p50": 7.9,
+        "latency_ms_p95": 12.5
+      },
+      "tfidf": {
+        "p@5": 0.547,
+        "p@10": 0.44,
+        "mrr": 0.629,
+        "ndcg@10": 0.478,
+        "constraint_violation_rate@10": 0.517,
+        "latency_ms_p50": 10.9,
+        "latency_ms_p95": 12.5
+      },
+      "embedding": {
+        "p@5": 0.48,
+        "p@10": 0.407,
+        "mrr": 0.565,
+        "ndcg@10": 0.426,
+        "constraint_violation_rate@10": 0.667,
+        "latency_ms_p50": 10.3,
+        "latency_ms_p95": 11.9
+      },
+      "hybrid": {
+        "p@5": 0.827,
+        "p@10": 0.8,
+        "mrr": 0.917,
+        "ndcg@10": 0.819,
+        "constraint_violation_rate@10": 0.167,
+        "latency_ms_p50": 32.4,
+        "latency_ms_p95": 40.1
+      }
+    }
+  }
+}
