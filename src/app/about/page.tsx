@@ -1,7 +1,7 @@
 export default function AboutPage() {
   return (
-    <main className="max-w-3xl mx-auto py-20 px-6 bg-white">
-      <h1 className="text-4xl font-bold text-slate-800 mb-6">About Nutichef</h1>
+    <main className="about-page max-w-3xl mx-auto py-20 px-6 bg-white">
+      <h1 className="text-4xl font-bold text-slate-800 mb-6">About NutriChef</h1>
       <p className="text-slate-600 mb-8">
         Nutichef is your personal kitchen assistant. Simply upload or enter the
         ingredients you have, and we’ll suggest recipes tailored to your diet.
@@ -9,7 +9,7 @@ export default function AboutPage() {
         weight goals.
       </p>
 
-      <h2 className="text-2xl font-semibold text-emerald-600 mb-4">Why Nutichef?</h2>
+      <h2 className="text-2xl font-semibold text-emerald-600 mb-4">Why NutriChef?</h2>
       <ul className="list-disc list-inside text-slate-600 space-y-2 mb-10">
         <li>Discover recipes from the ingredients you already have</li>
         <li>Personalized suggestions based on dietary preferences</li>
