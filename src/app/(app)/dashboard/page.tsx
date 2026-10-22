@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Droplets, Scale, Utensils } from "lucide-react";
 import { motion } from "framer-motion";
+import Recommendations from "@/components/nlp/Recommendations";
 import {
   LineChart,
   Line,
@@ -64,13 +65,13 @@ export default function DashboardPage() {
           cx={cx}
           cy={cy}
           r={8}
-          fill="#10b981"
-          stroke="#065f46"
+          fill="#FF4D35"
+          stroke="#0A0A0A"
           strokeWidth={2}
         />
       );
     }
-    return <circle cx={cx} cy={cy} r={3} fill="#10b981" />;
+    return <circle cx={cx} cy={cy} r={3} fill="#FF4D35" />;
   };
 
   const getBmiCategory = (bmiValue: number) => {
@@ -81,20 +82,22 @@ export default function DashboardPage() {
   };
 
   return (
-    <div className="p-8 space-y-8 bg-gradient-to-br from-emerald-50 via-white to-lime-50 min-h-screen transition-all duration-300 md:ml-64">
+    <div className="py-4 sm:py-6 space-y-6">
       {/* Header Section */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-3xl font-extrabold text-emerald-800 mb-2 drop-shadow-sm">
-          Welcome back 👋 {profile?.full_name || ""}
+        <h1 className="display text-4xl sm:text-5xl mb-2 drop-shadow-stamp-sm">
+          Welcome back{profile?.full_name ? `, ${profile.full_name}` : ""}
         </h1>
-        <p className="text-emerald-600">
+        <p className="text-lg text-ink/80">
           Here’s your health snapshot — hydration, weight, BMI, and recipe tips.
         </p>
       </motion.div>
+
+      <Recommendations />
 
       {/* Cards Section */}
       <motion.div
@@ -104,7 +107,7 @@ export default function DashboardPage() {
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         {/* Hydration Card */}
-        <Card className="shadow-md rounded-2xl bg-white/70 backdrop-blur-lg border border-emerald-100">
+        <Card className="shadow-stamp rounded-lg bg-white/70 backdrop-blur-lg border border-emerald-100">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-emerald-700">
               <Droplets className="text-emerald-500" /> Hydration
@@ -126,7 +129,7 @@ export default function DashboardPage() {
                 <Line
                   type="monotone"
                   dataKey="liters"
-                  stroke="#10b981"
+                  stroke="#FF4D35"
                   strokeWidth={3}
                 />
               </LineChart>
@@ -135,7 +138,7 @@ export default function DashboardPage() {
         </Card>
 
         {/* Weight + BMI Card */}
-        <Card className="shadow-md rounded-2xl bg-white/70 backdrop-blur-lg border border-emerald-100">
+        <Card className="shadow-stamp rounded-lg bg-white/70 backdrop-blur-lg border border-emerald-100">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-emerald-700">
               <Scale className="text-lime-600" /> Weight & BMI
@@ -172,12 +175,12 @@ export default function DashboardPage() {
                 {profile?.weight_kg && heightM && (
                   <ReferenceLine
                     y={profile.weight_kg}
-                    stroke="#10b981"
+                    stroke="#FF4D35"
                     strokeDasharray="3 3"
                     label={{
                       value: "You",
                       position: "right",
-                      fill: "#065f46",
+                      fill: "#0A0A0A",
                     }}
                   />
                 )}
@@ -185,7 +188,7 @@ export default function DashboardPage() {
                 <Line
                   type="monotone"
                   dataKey="weight"
-                  stroke="#10b981"
+                  stroke="#FF4D35"
                   strokeWidth={3}
                   dot={<CurrentWeightDot />}
                 />
@@ -217,7 +220,7 @@ export default function DashboardPage() {
         </Card>
 
         {/* Recipe Suggestions */}
-        <Card className="shadow-md rounded-2xl bg-white/70 backdrop-blur-lg border border-lime-100">
+        <Card className="shadow-stamp rounded-lg bg-white/70 backdrop-blur-lg border border-lime-100">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lime-700">
               <Utensils className="text-lime-600" /> Quick Recipes
@@ -227,13 +230,13 @@ export default function DashboardPage() {
             {profile?.IngredientLists?.map((recipe: any) => (
               <div
                 key={recipe.id}
-                className="p-3 rounded-xl bg-lime-100 text-emerald-900 shadow-sm hover:bg-lime-200 transition"
+                className="p-3 rounded-xl bg-lime-100 text-emerald-900 shadow-stamp-sm hover:bg-lime-200 transition"
               >
                 🥗 {recipe.title}
               </div>
             ))}
             <Button
-              className="mt-3 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl shadow-md"
+              className="mt-3 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl shadow-stamp"
               onClick={() => router.push("/recipes")}
             >
               See More Recipes
