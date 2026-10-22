@@ -24,13 +24,13 @@ export default function SettingsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-green-50 px-6 md:px-10 py-10 md:ml-64 transition-all">
+    <div className="min-h-screen px-6 md:px-10 py-10 transition-all">
       <motion.h1
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-3xl font-extrabold text-emerald-700 mb-3 text-center md:text-left"
+        className="display text-3xl font-extrabold text-emerald-700 mb-3 text-center md:text-left"
       >
-        ⚙️ Settings
+        Settings
       </motion.h1>
 
       <p className="text-slate-600 mb-8 text-center md:text-left">
@@ -42,7 +42,7 @@ export default function SettingsPage() {
         onSubmit={saveSettings}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="space-y-10 max-w-3xl bg-white/80 backdrop-blur-sm p-6 md:p-10 rounded-3xl border border-emerald-100 shadow-md mx-auto"
+        className="space-y-10 max-w-3xl bg-white/80 backdrop-blur-sm p-6 md:p-10 rounded-lg border border-emerald-100 shadow-stamp mx-auto"
       >
         {/* Profile Info */}
         <section>
