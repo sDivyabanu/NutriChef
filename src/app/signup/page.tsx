@@ -1,15 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { Logo } from "@/components/bento/Brand";
+import KitchenArt from "@/components/KitchenArt";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Poppins } from "next/font/google";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 export default function SignupPage() {
   const router = useRouter();
@@ -47,18 +44,20 @@ export default function SignupPage() {
 
   return (
     <main
-      className={`${poppins.className} relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-[#f8fbf7] via-white to-[#eef6eb] px-4`}
+      className={`auth-page relative flex min-h-screen items-center justify-center overflow-hidden px-4`}
     >
+      <Link href="/" className="auth-home text-link">← BACK TO THE KITCHEN</Link>
+      <div className="auth-art"><p className="eyebrow">GOOD FOOD STARTS HERE.</p><KitchenArt /><h1>YOUR NEXT<br />GREAT MEAL<br /><span className="highlight-orange">STARTS WITH YOU.</span></h1></div>
       {/* Animated background blobs */}
       <motion.div
         animate={{ x: [0, 40, 0], y: [0, -40, 0] }}
         transition={{ repeat: Infinity, duration: 10 }}
-        className="absolute top-24 left-20 w-72 h-72 bg-[#6AB04A]/20 rounded-full blur-3xl"
+        className="absolute top-24 left-20 w-72 h-72 bg-[#FF4D35]/20 rounded-full blur-3xl"
       />
       <motion.div
         animate={{ x: [0, -60, 0], y: [0, 60, 0] }}
         transition={{ repeat: Infinity, duration: 12 }}
-        className="absolute bottom-20 right-24 w-96 h-96 bg-[#6AB04A]/15 rounded-full blur-3xl"
+        className="absolute bottom-20 right-24 w-96 h-96 bg-[#FF4D35]/15 rounded-full blur-3xl"
       />
 
       {/* Signup Card */}
@@ -66,8 +65,9 @@ export default function SignupPage() {
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="w-full max-w-md relative bg-white/80 backdrop-blur-2xl rounded-3xl shadow-lg p-8 border border-[#eaf3e5]"
+        className="w-full max-w-md relative bg-blush kitchen-card p-8 border border-[#0A0A0A]"
       >
+        <div className="mb-8"><Logo /></div>
         {/* Floating food emojis */}
         <motion.span
           animate={{ y: [0, -10, 0] }}
@@ -92,11 +92,11 @@ export default function SignupPage() {
         </motion.span>
 
         {/* Title */}
-        <h2 className="text-4xl font-extrabold text-[#1E1E1E] text-center mb-3">
+        <h2 className="display text-5xl text-center mb-3">
           Create Account 🧑‍🍳
         </h2>
-        <p className="text-[#555] text-center mb-8">
-          Join <span className="text-[#6AB04A] font-semibold">NutriChef</span> and start your healthy journey today
+        <p className="text-[#45453F] text-center mb-8">
+          Join <span className="text-[#FF4D35] font-semibold">NutriChef</span> and start your healthy journey today
         </p>
 
         {/* Success Message */}
@@ -104,7 +104,7 @@ export default function SignupPage() {
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-4 text-center text-[#6AB04A] font-semibold"
+            className="mb-4 text-center text-[#FF4D35] font-semibold"
           >
             ✅ Account created successfully! Redirecting to login...
           </motion.div>
@@ -117,9 +117,9 @@ export default function SignupPage() {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Full Name"
+            aria-label="Full name" placeholder="Full Name"
             required
-            className="w-full rounded-xl border border-[#c8e1bc] px-4 py-3 bg-white/70 shadow-sm text-[#1E1E1E] placeholder-[#8fa28c] focus:outline-none focus:ring-2 focus:ring-[#6AB04A]/50 transition"
+            className="w-full rounded-xl border border-[#0A0A0A] px-4 py-3 bg-white/70 shadow-stamp-sm text-[#0A0A0A] placeholder-[#8fa28c] focus:outline-none focus:ring-2 focus:ring-[#FF4D35]/50 transition"
             disabled={loading}
           />
           <motion.input
@@ -127,9 +127,9 @@ export default function SignupPage() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
+            aria-label="Email address" placeholder="Email"
             required
-            className="w-full rounded-xl border border-[#c8e1bc] px-4 py-3 bg-white/70 shadow-sm text-[#1E1E1E] placeholder-[#8fa28c] focus:outline-none focus:ring-2 focus:ring-[#6AB04A]/50 transition"
+            className="w-full rounded-xl border border-[#0A0A0A] px-4 py-3 bg-white/70 shadow-stamp-sm text-[#0A0A0A] placeholder-[#8fa28c] focus:outline-none focus:ring-2 focus:ring-[#FF4D35]/50 transition"
             disabled={loading}
           />
           <motion.input
@@ -137,9 +137,9 @@ export default function SignupPage() {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
+            aria-label="Password" placeholder="Password"
             required
-            className="w-full rounded-xl border border-[#c8e1bc] px-4 py-3 bg-white/70 shadow-sm text-[#1E1E1E] placeholder-[#8fa28c] focus:outline-none focus:ring-2 focus:ring-[#6AB04A]/50 transition"
+            className="w-full rounded-xl border border-[#0A0A0A] px-4 py-3 bg-white/70 shadow-stamp-sm text-[#0A0A0A] placeholder-[#8fa28c] focus:outline-none focus:ring-2 focus:ring-[#FF4D35]/50 transition"
             disabled={loading}
           />
 
@@ -148,10 +148,10 @@ export default function SignupPage() {
             whileTap={{ scale: loading ? 1 : 0.95 }}
             type="submit"
             disabled={loading}
-            className={`w-full py-3 rounded-xl font-semibold shadow-md transition-all ${
+            className={`w-full py-3 rounded-xl font-semibold shadow-stamp transition-all ${
               loading
                 ? "bg-[#A5D6A7] text-white cursor-not-allowed"
-                : "bg-[#6AB04A] text-white hover:bg-[#5a9b3d] hover:shadow-lg hover:scale-105"
+                : "bg-[#FF4D35] text-[#0A0A0A] hover:bg-[#FFD86B] hover:shadow-lg hover:scale-105"
             }`}
           >
             {loading ? "Creating Account..." : "Sign Up"}
@@ -159,9 +159,9 @@ export default function SignupPage() {
         </form>
 
         {/* Footer */}
-        <p className="text-sm text-[#555] text-center mt-6">
+        <p className="text-sm text-[#45453F] text-center mt-6">
           Already have an account?{" "}
-          <Link href="/login" className="text-[#6AB04A] font-semibold hover:underline">
+          <Link href="/login" className="text-[#FF4D35] font-semibold hover:underline">
             Log in
           </Link>
         </p>
