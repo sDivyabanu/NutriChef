@@ -56,7 +56,7 @@ export default function OnboardingPage() {
 };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-emerald-100 to-white p-6">
+    <div className="min-h-screen flex flex-col items-center justify-center p-6">
       <div className="w-full max-w-lg bg-white shadow-xl rounded-2xl p-6 relative overflow-hidden">
         <button
           onClick={() => router.push("/profile")}
