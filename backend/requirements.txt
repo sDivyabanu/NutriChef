@@ -1,0 +1,17 @@
+# NutriChef NLP service (Python 3.12). Exact tested versions: requirements.lock.txt
+fastapi
+uvicorn[standard]
+pydantic>=2
+python-multipart
+PyJWT
+numpy
+pandas
+scikit-learn
+rapidfuzz
+sentence-transformers
+spacy
+psutil
+pytest
+httpx
+# CPU build of torch: pip install torch --index-url https://download.pytorch.org/whl/cpu
+# optional photo detection: ultralytics
