@@ -2,7 +2,7 @@
 import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
 
-const SECRET = process.env.JWT_SECRET || "your_jwt_secret"; // use same secret as your login route
+const SECRET = process.env.JWT_SECRET!; // same secret as the login route (set in .env.local)
 
 export async function getUser() {
   try {
