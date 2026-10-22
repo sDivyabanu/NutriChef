@@ -1,0 +1,453 @@
+# NutriChef curated ingredient lexicon.
+# Format:  canonical | category | parent | tags | synonyms (comma separated)
+# - category drives diet rules: meat/poultry/fish/shellfish => not vegetarian; dairy/egg => not vegan.
+# - parent is an "is-a" link: excluding a parent excludes its children; having a child satisfies the parent.
+# - tags: staple, spicy, protein, fibre, fatty, nonveg, nonvegan, allergen:<group>, maybe:<group> (may contain)
+# - plural forms are generated automatically; list irregular / regional / Tamil forms explicitly.
+# Allergen groups: dairy egg peanut tree_nut soy gluten fish shellfish sesame mustard
+
+# ---------------------------------------------------------------- vegetables
+vegetable | vegetable | | | vegetables, veggies, veggie, mixed vegetables, sabzi, kaikari, kaaikari
+tomato | vegetable | vegetable | | tomatoes, tamatar, tamatar, thakkali, thakaali, tomatos, தக்காளி
+cherry tomato | vegetable | tomato | | grape tomato, grape tomatoes, cherry tomatoes
+plum tomato | vegetable | tomato | | roma tomato, roma tomatoes, plum tomatoes
+heirloom tomato | vegetable | tomato | |
+sun-dried tomato | vegetable | tomato | | sun dried tomato, sundried tomato
+canned tomato | vegetable | tomato | | crushed tomatoes, diced tomatoes, whole peeled tomatoes, san marzano tomatoes, tinned tomatoes
+tomato paste | condiment | tomato | | tomato puree, tomato purée, tomato concentrate
+tomato sauce | sauce | tomato | | marinara, marinara sauce, passata, pasta sauce
+onion | vegetable | vegetable | | onions, pyaz, pyaaz, kanda, vengayam, vengaayam, venkayam, vengayum, வெங்காயம், yellow onion, white onion, sweet onion, vidalia onion, spanish onion, brown onion
+red onion | vegetable | onion | | purple onion
+shallot | vegetable | onion | | shallots, small onion, small onions, sambar onion, sambar onions, chinna vengayam, pearl onion, pearl onions
+spring onion | vegetable | onion | | spring onions, green onion, green onions, scallion, scallions, salad onion
+leek | vegetable | | | leeks
+chive | herb | | | chives
+garlic | vegetable | | | garlic clove, garlic cloves, cloves garlic, clove garlic, lehsun, lasun, poondu, vellai poondu, பூண்டு
+garlic powder | spice | garlic | | granulated garlic
+ginger | spice | | | fresh ginger, ginger root, adrak, inji, இஞ்சி, gingerroot
+ground ginger | spice | ginger | | dry ginger, sonth, sukku
+ginger garlic paste | condiment | | | ginger-garlic paste
+potato | vegetable | vegetable | | potatoes, aloo, alu, urulaikizhangu, urulai kizhangu, urulai, urulaikilangu, yukon gold potato, russet potato, red potato, new potato, fingerling potato, baby potato, boiling potato
+sweet potato | vegetable | vegetable | | sweet potatoes, yam, yams, shakarkandi, sakkaravalli kizhangu, sarkarai valli kizhangu
+carrot | vegetable | vegetable | | carrots, gajar, kerat, caret
+bell pepper | vegetable | vegetable | | bell peppers, capsicum, capsicums, shimla mirch, sweet pepper, sweet peppers, red bell pepper, green bell pepper, yellow bell pepper, orange bell pepper, kudai milagai, kodai milagai, red pepper, green pepper, yellow pepper, red peppers, green peppers, yellow peppers, peppers
+roasted red pepper | vegetable | bell pepper | | roasted red peppers, pimiento, pimientos
+chili pepper | vegetable | | spicy | chili, chilli, chile, chilies, chillies, chiles, chilis, hot pepper, hot peppers, green chili, green chilli, green chile, green chilies, green chillies, red chili, red chilli, red chile, mirchi, hari mirch, milagai, pachai milagai, மிளகாய், thai chili, bird's eye chili, fresno chile, chile de arbol, chiles de arbol, arbol chile
+jalapeno | vegetable | chili pepper | spicy | jalapeño, jalapenos, jalapeños, jalapeno chile, jalapeno pepper
+serrano chile | vegetable | chili pepper | spicy | serrano, serranos, serrano pepper, serrano chiles
+habanero | vegetable | chili pepper | spicy | habanero chile, scotch bonnet
+poblano | vegetable | chili pepper | | poblano chile, poblano chiles, poblanos, poblano pepper
+chipotle | spice | chili pepper | spicy | chipotle chile, chipotles, chipotle chiles in adobo, chipotle in adobo, chipotles in adobo
+dried red chili | spice | chili pepper | spicy | dried red chilies, dried chiles, dry red chilli, kashmiri chili, byadgi chili, vara milagai, kaanja milagai, guajillo, ancho chile, ancho chiles, pasilla
+garlic chive | herb | chive | |
+eggplant | vegetable | vegetable | | eggplants, aubergine, aubergines, brinjal, brinjals, baingan, kathirikai, kathrikai, kathirikkai, kathirikaai, kathrikkai, கத்தரிக்காய், japanese eggplant
+zucchini | vegetable | squash | | zucchinis, courgette, courgettes
+squash | vegetable | vegetable | | squashes, summer squash, yellow squash
+butternut squash | vegetable | squash | |
+acorn squash | vegetable | squash | |
+pumpkin | vegetable | squash | | pumpkins, kaddu, poosanikai, parangikai, parangikkai, red pumpkin, pumpkin puree
+bottle gourd | vegetable | squash | | lauki, dudhi, sorakkai, suraikai, sorakai, calabash
+bitter gourd | vegetable | vegetable | | karela, pavakkai, pavakai, bitter melon
+snake gourd | vegetable | vegetable | | pudalangai, pudalanga, padwal
+ridge gourd | vegetable | vegetable | | peerkangai, turai, luffa
+ivy gourd | vegetable | vegetable | | kovakkai, tindora, tendli
+drumstick | vegetable | vegetable | | drumsticks moringa, moringa pods, murungakkai, murungaikai, murunga, sahjan
+raw banana | vegetable | vegetable | | plantain, plantains, vazhakkai, vazhaikai, kacha kela
+okra | vegetable | vegetable | | lady finger, ladies finger, ladyfinger okra, bhindi, vendakkai, vendaikai, vendakai, gumbo pods
+cauliflower | vegetable | vegetable | | cauliflowers, gobi, gobhi, phool gobi, cauliflower florets
+broccoli | vegetable | vegetable | fibre | broccoli florets, broccolini, broccoli rabe, rapini
+cabbage | vegetable | vegetable | | cabbages, patta gobi, muttaikose, muttai kose, muttaikos, green cabbage, red cabbage, savoy cabbage, napa cabbage
+bok choy | vegetable | cabbage | | bok choi, pak choi, baby bok choy
+brussels sprout | vegetable | cabbage | | brussels sprouts, brussel sprouts
+kale | vegetable | leafy greens | | lacinato kale, tuscan kale, cavolo nero
+spinach | vegetable | leafy greens | | palak, keerai, pasalai keerai, paalak, baby spinach, spinach leaves
+leafy greens | vegetable | vegetable | | greens, mixed greens, salad greens, collard greens, collards, mustard greens, sarson, keerai vagaigal
+swiss chard | vegetable | leafy greens | | chard, rainbow chard
+lettuce | vegetable | leafy greens | | lettuces, romaine, romaine lettuce, iceberg lettuce, butter lettuce, bibb lettuce, boston lettuce, little gem
+arugula | vegetable | leafy greens | | rocket, roquette, baby arugula
+watercress | vegetable | leafy greens | | cress
+fenugreek leaves | herb | leafy greens | | methi, methi leaves, vendhaya keerai, kasuri methi, dried fenugreek leaves
+radicchio | vegetable | leafy greens | | endive, endives, belgian endive, escarole, frisee
+celery | vegetable | vegetable | allergen:celery | celery stalk, celery stalks, celery rib, celery ribs
+celery root | vegetable | vegetable | | celeriac
+fennel | vegetable | vegetable | | fennel bulb, fennel bulbs, fennel fronds
+cucumber | vegetable | vegetable | | cucumbers, kheera, kakdi, vellarikai, vellarikkai, english cucumber, persian cucumber, hothouse cucumber, kirby cucumber
+radish | vegetable | vegetable | | radishes, mooli, mullangi, daikon, daikon radish
+beet | vegetable | vegetable | | beets, beetroot, beetroots, chukandar
+turnip | vegetable | vegetable | | turnips, shalgam, swede, swedes, rutabaga
+parsnip | vegetable | vegetable | | parsnips
+asparagus | vegetable | vegetable | | asparagus spears
+artichoke | vegetable | vegetable | | artichokes, artichoke hearts
+green bean | vegetable | vegetable | | green beans, french beans, string beans, haricots verts, haricot vert, beans poriyal, avarakkai, broad beans flat
+peas | vegetable | vegetable | protein fibre | pea, green peas, matar, mattar, pattani, frozen peas, english peas
+snow pea | vegetable | peas | | snow peas, mangetout, snap peas, sugar snap peas, snap pea
+corn | vegetable | vegetable | | sweet corn, sweetcorn, corn kernels, corn on the cob, ears corn, makka, makkai, cholam, sola, bhutta
+mushroom | vegetable | vegetable | | mushrooms, button mushroom, button mushrooms, cremini, cremini mushrooms, crimini, portobello, portobello mushrooms, shiitake, shiitake mushrooms, oyster mushrooms, porcini, porcini mushrooms, chanterelles, wild mushrooms, kaalan, kalan, khumb, mushroom caps
+avocado | fruit | | fatty | avocados, butter fruit
+olive | fruit | | fatty | olives, kalamata olives, green olives, black olives, castelvetrano olives, nicoise olives
+caper | condiment | | | capers
+jackfruit | fruit | | | raw jackfruit, kathal, palakkai, chakka
+lemongrass | herb | | | lemon grass
+water chestnut | vegetable | vegetable | | water chestnuts
+bean sprout | vegetable | vegetable | | bean sprouts, sprouts, mung bean sprouts
+tomatillo | vegetable | vegetable | | tomatillos
+
+# ---------------------------------------------------------------- fruit
+fruit | fruit | | | fruits, fresh fruit
+lemon | fruit | fruit | | lemons, nimbu, elumichai, elumichampazham, meyer lemon
+lemon juice | fruit | lemon | | juice of lemon, juice lemon, nimbu ras, elumichai saaru
+lemon zest | fruit | lemon | | lemon peel, grated lemon peel, lemon rind
+lime | fruit | fruit | | limes, key lime, key limes
+lime juice | fruit | lime | | juice of lime, juice lime
+lime zest | fruit | lime | | lime peel
+orange | fruit | fruit | qamb | oranges, navel orange, blood orange, mandarin, mandarins, clementine, clementines, tangerine, santra
+orange juice | beverage | orange | |
+orange zest | fruit | orange | | orange peel
+apple | fruit | fruit | | apples, seb, granny smith apple, granny smith apples, gala apple, honeycrisp
+apple cider | beverage | apple | |
+applesauce | fruit | apple | | apple sauce
+banana | fruit | fruit | | bananas, kela, vazhaipazham, vazhai pazham
+mango | fruit | fruit | | mangoes, mangos, aam, maanga, mampazham, raw mango, kairi
+pineapple | fruit | fruit | | pineapples, ananas, annasi pazham
+strawberry | fruit | berry | | strawberries
+raspberry | fruit | berry | | raspberries
+blueberry | fruit | berry | | blueberries
+blackberry | fruit | berry | | blackberries
+cranberry | fruit | berry | | cranberries, dried cranberries
+berry | fruit | fruit | | berries, mixed berries
+cherry | fruit | fruit | | cherries, sour cherries
+grape | fruit | fruit | | grapes, angoor
+raisin | fruit | grape | | raisins, golden raisins, kishmish, ularntha thiratchai, currants, sultanas
+peach | fruit | fruit | | peaches, nectarine, nectarines
+pear | fruit | fruit | | pears
+plum | fruit | fruit | | plums, prunes, prune
+apricot | fruit | fruit | | apricots, dried apricots
+fig | fruit | fruit | | figs, dried figs, anjeer, athi pazham
+date | fruit | fruit | qamb | dates, medjool dates, khajur, pericham pazham
+pomegranate | fruit | fruit | | pomegranates, pomegranate seeds, anar, maadhulai
+watermelon | fruit | fruit | | tarbooz
+melon | fruit | fruit | | melons, cantaloupe, honeydew
+papaya | fruit | fruit | | papayas, papaya fruit, pappali
+guava | fruit | fruit | | guavas, koyya
+kiwi | fruit | fruit | | kiwis, kiwifruit
+coconut | fruit | | fatty maybe:tree_nut | coconuts, grated coconut, shredded coconut, desiccated coconut, coconut flakes, fresh coconut, thengai, thenga, nariyal, தேங்காய், unsweetened coconut
+coconut milk | dairy_alt | coconut | fatty | coconut cream, thengai paal, light coconut milk, unsweetened coconut milk
+rhubarb | vegetable | | |
+tamarind | fruit | | | imli, puli, tamarind paste, tamarind pulp, tamarind concentrate, புளி
+
+# ---------------------------------------------------------------- herbs & spices
+herb | herb | | | herbs, fresh herbs, mixed herbs, dried herbs
+cilantro | herb | herb | | coriander leaves, coriander leaf, fresh coriander, dhania, dhaniya, dhaniya patta, kothamalli, kothamalli ilai, kothamalli leaves, கொத்தமல்லி, hara dhania, chinese parsley
+parsley | herb | herb | | flat-leaf parsley, flat leaf parsley, italian parsley, curly parsley
+basil | herb | herb | | basil leaves, thai basil, holy basil, tulsi, sweet basil
+mint | herb | herb | | mint leaves, pudina, pudhina, spearmint
+dill | herb | herb | | dill weed, sowa, shepu
+thyme | herb | herb | | thyme leaves, thyme sprigs
+rosemary | herb | herb | |
+oregano | herb | herb | | dried oregano
+sage | herb | herb | qamb | sage leaves
+tarragon | herb | herb | |
+marjoram | herb | herb | |
+bay leaf | herb | herb | | bay leaves, tej patta, tejpatta, biryani leaf, brinji ilai, california bay leaf
+curry leaves | herb | herb | | curry leaf, kadi patta, kadhi patta, karuveppilai, kariveppilai, karivepillai, karuveppilai, கறிவேப்பிலை, kadipatta
+spice | spice | | | spices, whole spices, spice mix
+black pepper | spice | spice | staple | pepper, ground black pepper, black peppercorns, peppercorns, peppercorn, kali mirch, milagu, மிளகு, freshly ground pepper, cracked black pepper, white pepper, ground pepper, black pepper powder, milagu thool
+cumin | spice | spice | | cumin seeds, cumin seed, ground cumin, jeera, jeerakam, jeeragam, seeragam, seerakam, சீரகம், roasted cumin
+coriander seed | spice | spice | | coriander seeds, ground coriander, coriander powder, dhania powder, malli, malli thool, kothamalli vidhai
+turmeric | spice | spice | | turmeric powder, ground turmeric, haldi, manjal, manjal thool, மஞ்சள்
+chili powder | spice | chili pepper | spicy | chile powder, chilli powder, red chili powder, red chilli powder, lal mirch, milagai thool, milagai podi, kashmiri chili powder, kashmiri red chilli powder, ancho chile powder
+cayenne | spice | chili pepper | spicy | cayenne pepper, ground cayenne
+red pepper flakes | spice | chili pepper | spicy | crushed red pepper, crushed red pepper flakes, chili flakes, chilli flakes, red chile flakes, aleppo pepper, gochugaru, korean chili flakes
+paprika | spice | spice | | sweet paprika, smoked paprika, hot paprika, pimenton
+garam masala | spice | spice | | garam masala powder
+curry powder | spice | spice | | madras curry powder, curry powder mild
+sambar powder | spice | spice | | sambhar powder, sambar podi, sambar masala
+rasam powder | spice | spice | | rasam podi
+chaat masala | spice | spice | | chat masala
+mustard seed | spice | spice | allergen:mustard | mustard seeds, rai, kadugu, kaduku, கடுகு, black mustard seeds, yellow mustard seeds
+fenugreek seed | spice | spice | | fenugreek seeds, methi seeds, methi dana, vendhayam, venthayam
+fennel seed | spice | spice | | fennel seeds, saunf, sombu, perunjeeragam
+cardamom | spice | spice | | cardamom pods, green cardamom, elaichi, elakkai, yelakkai, ground cardamom, black cardamom
+cinnamon | spice | spice | | cinnamon stick, cinnamon sticks, ground cinnamon, dalchini, pattai, lavangapattai
+clove | spice | spice | | cloves, ground cloves, whole cloves, laung, lavangam, kirambu
+nutmeg | spice | spice | | ground nutmeg, jaiphal, jathikai
+mace | spice | spice | qamb | javitri
+star anise | spice | spice | | star anise pods, chakra phool, annasi poo
+anise | spice | spice | | aniseed, anise seed, anise seeds
+asafoetida | spice | spice | maybe:gluten | asafetida, hing, perungayam, perungaayam
+saffron | spice | spice | | saffron threads, kesar, kungumapoo
+allspice | spice | spice | | ground allspice
+caraway | spice | spice | | caraway seeds, caraway seed
+nigella seed | spice | spice | | nigella seeds, kalonji, onion seeds, karunjeeragam
+carom seed | spice | spice | | ajwain, carom seeds, omam
+sumac | spice | spice | |
+za'atar | spice | spice | maybe:sesame | zaatar, za atar
+five-spice powder | spice | spice | | five spice powder, chinese five spice
+italian seasoning | spice | herb | | herbes de provence
+vanilla | baking | | | vanilla extract, pure vanilla extract, vanilla bean, vanilla beans, vanilla essence, vanilla paste, vanilla bean paste
+almond extract | baking | | | almond essence
+salt | spice | | staple | kosher salt, sea salt, table salt, fine sea salt, flaky sea salt, coarse salt, coarse sea salt, flaky salt, uppu, namak, black salt, kala namak, rock salt, sendha namak, morton salt, diamond crystal kosher salt, fleur de sel, maldon salt
+
+# ---------------------------------------------------------------- grains, flours, bread, pasta
+rice | grain | | | rices, chawal, arisi, அரிசி, white rice, long-grain rice, long grain rice, cooked rice, steamed rice, leftover rice, raw rice, ponni rice, sona masoori, idli rice, sadham, satham, sadam, soru, choru
+basmati rice | grain | rice | | basmati
+brown rice | grain | rice | fibre |
+jasmine rice | grain | rice | | jasmine
+arborio rice | grain | rice | | arborio, carnaroli, risotto rice
+sushi rice | grain | rice | | short-grain rice, short grain rice, glutinous rice, sticky rice
+wild rice | grain | | fibre |
+flattened rice | grain | rice | | poha, aval, avil, beaten rice, rice flakes
+puffed rice | grain | rice | | murmura, pori, kurmura
+quinoa | grain | | protein fibre |
+oats | grain | | fibre maybe:gluten | oat, rolled oats, old-fashioned oats, old fashioned oats, quick oats, steel-cut oats, oatmeal, porridge oats, oat flakes
+barley | grain | | allergen:gluten fibre | pearl barley, jau
+bulgur | grain | | allergen:gluten fibre | bulgur wheat, bulghur, burghul, dalia, broken wheat, godhumai ravai
+couscous | grain | | allergen:gluten | pearl couscous, israeli couscous
+semolina | grain | | allergen:gluten | sooji, suji, rava, ravai, ravva, bombay rava, semolina flour
+millet | grain | | fibre | millets, kambu, bajra, pearl millet, thinai, foxtail millet, varagu, samai
+finger millet | grain | millet | fibre | ragi, kezhvaragu, nachni, ragi flour
+cornmeal | grain | corn | | polenta, grits, yellow cornmeal, corn meal, masa harina, masa
+farro | grain | | allergen:gluten fibre | spelt, freekeh
+flour | flour | | allergen:gluten | all-purpose flour, all purpose flour, plain flour, maida, white flour, unbleached flour, bread flour, cake flour, pastry flour, self-rising flour, self raising flour, 00 flour, maavu
+whole wheat flour | flour | flour | allergen:gluten fibre | wholemeal flour, atta, chapati flour, gothumai maavu, godhumai maavu, wheat flour, whole-wheat flour, whole wheat pastry flour
+chickpea flour | flour | | | besan, gram flour, kadalai maavu, garbanzo flour
+rice flour | flour | | | arisi maavu, glutinous rice flour, sweet rice flour, mochiko
+almond flour | flour | almond | allergen:tree_nut | almond meal, ground almonds
+cornstarch | baking | | | corn starch, cornflour, corn flour
+tapioca | baking | | | tapioca starch, tapioca flour, sago, sabudana, javvarisi
+arrowroot | baking | | | arrowroot powder
+bread | bread | | allergen:gluten maybe:dairy maybe:egg | breads, white bread, whole wheat bread, sourdough, sourdough bread, country bread, country-style bread, rustic bread, sandwich bread, brioche, challah, ciabatta, focaccia, pullman loaf
+baguette | bread | bread | allergen:gluten | french bread, baguettes
+pita | bread | bread | allergen:gluten | pita bread, pitas, pitta
+naan | bread | bread | allergen:gluten maybe:dairy | naan bread
+roti | bread | bread | allergen:gluten | chapati, chapatti, phulka, rotis, chapathi
+tortilla | bread | bread | | tortillas, flour tortilla, flour tortillas, corn tortilla, corn tortillas
+bun | bread | bread | allergen:gluten maybe:dairy maybe:egg | buns, hamburger buns, burger buns, hot dog buns, rolls, dinner rolls, kaiser rolls, pav, pao
+breadcrumbs | bread | bread | allergen:gluten | bread crumbs, breadcrumb, panko, panko breadcrumbs, dry breadcrumbs, fresh breadcrumbs
+cracker | bread | | allergen:gluten | crackers, graham crackers, graham cracker crumbs, saltines
+pasta | pasta | | allergen:gluten maybe:egg | dried pasta, spaghetti, linguine, fettuccine, penne, rigatoni, fusilli, orecchiette, farfalle, macaroni, elbow macaroni, bucatini, pappardelle, tagliatelle, orzo, lasagna noodles, lasagne noodles, ziti, gemelli, campanelle, cavatappi, angel hair, vermicelli pasta, pasta shells, conchiglie, paccheri, ditalini
+noodle | pasta | | | noodles, rice noodles, rice vermicelli, soba, soba noodles, udon, udon noodles, ramen noodles, egg noodles, glass noodles, cellophane noodles, hakka noodles, sevai, semiya, vermicelli
+puff pastry | baking | | allergen:gluten maybe:dairy | puff pastry sheet, phyllo, filo, phyllo dough, pie crust, pie dough, pastry dough, tart shell, shortcrust pastry
+pizza dough | baking | | allergen:gluten |
+yeast | baking | | | active dry yeast, instant yeast, dry yeast, rapid-rise yeast, fresh yeast
+baking powder | baking | | |
+baking soda | baking | | | bicarbonate of soda, sodium bicarbonate, cooking soda, soda bicarbonate
+cream of tartar | baking | | |
+gelatin | baking | | nonveg | gelatine, unflavored gelatin, powdered gelatin, gelatin sheets
+agar | baking | | | agar agar, china grass
+cocoa powder | baking | chocolate | | cocoa, unsweetened cocoa powder, dutch-process cocoa, dutch process cocoa, natural cocoa powder, cacao powder
+chocolate | sweet | | maybe:dairy | chocolates, bittersweet chocolate, semisweet chocolate, dark chocolate, milk chocolate, white chocolate, chocolate chips, semisweet chocolate chips, chocolate chunks, unsweetened chocolate, baking chocolate, chocolate bar
+cookie | sweet | | allergen:gluten maybe:dairy maybe:egg | cookies, biscuits, wafers, ladyfingers, amaretti, digestive biscuits
+cereal | grain | | | cornflakes, corn flakes, granola, muesli, rice krispies
+
+# ---------------------------------------------------------------- legumes & plant protein
+legume | legume | | protein fibre | legumes, pulses, beans
+lentil | legume | legume | protein fibre | lentils, dal, daal, dhal, paruppu, பருப்பு, masoor dal, red lentils, green lentils, brown lentils, french lentils, puy lentils, black lentils, beluga lentils
+toor dal | legume | lentil | protein fibre | tuvar dal, toovar dal, arhar dal, pigeon peas, thuvaram paruppu, thuvaram parupu, tur dal
+moong dal | legume | lentil | protein fibre | mung dal, moong, mung beans, mung bean, green gram, pasi paruppu, payatham paruppu, pachai payaru, split moong
+urad dal | legume | lentil | protein fibre | urad, black gram, ulundu, ulutham paruppu, ulundhu, split urad dal, white urad dal
+chana dal | legume | lentil | protein fibre | bengal gram, kadalai paruppu, split chickpeas
+chickpea | legume | legume | protein fibre | chickpeas, chick peas, chick pea, garbanzo, garbanzos, garbanzo beans, chana, chole, channa, kabuli chana, kondakadalai, konda kadalai, vellai kondakadalai, kadalai, black chickpeas, kala chana
+kidney bean | legume | legume | protein fibre | kidney beans, rajma, red kidney beans, red beans
+black bean | legume | legume | protein fibre | black beans, black turtle beans
+white bean | legume | legume | protein fibre | white beans, cannellini, cannellini beans, navy beans, great northern beans, butter beans, lima beans, flageolet beans
+pinto bean | legume | legume | protein fibre | pinto beans, refried beans
+black-eyed pea | legume | legume | protein fibre | black-eyed peas, black eyed peas, lobia, karamani, thattai payaru
+edamame | legume | soybean | protein allergen:soy | edamame beans
+soybean | legume | legume | protein allergen:soy | soybeans, soya, soya chunks, soy chunks, meal maker, nutrela, textured vegetable protein, tvp
+tofu | plant_protein | soybean | protein allergen:soy | firm tofu, extra-firm tofu, extra firm tofu, silken tofu, soft tofu, bean curd, tofu puffs
+tempeh | plant_protein | soybean | protein allergen:soy |
+seitan | plant_protein | | protein allergen:gluten | wheat gluten, vital wheat gluten
+hummus | condiment | chickpea | protein maybe:sesame | houmous, hummous
+
+# ---------------------------------------------------------------- nuts & seeds
+nut | nut | | allergen:tree_nut fatty protein | nuts, mixed nuts, tree nuts
+almond | nut | nut | allergen:tree_nut | almonds, badam, badaam, sliced almonds, slivered almonds, blanched almonds, marcona almonds
+cashew | nut | nut | allergen:tree_nut | cashews, cashew nuts, kaju, mundhiri, munthiri, cashewnuts
+walnut | nut | nut | allergen:tree_nut | walnuts, akhrot
+pecan | nut | nut | allergen:tree_nut | pecans
+pistachio | nut | nut | allergen:tree_nut | pistachios, pista
+hazelnut | nut | nut | allergen:tree_nut | hazelnuts, filberts
+macadamia | nut | nut | allergen:tree_nut | macadamia nuts, macadamias
+pine nut | nut | nut | allergen:tree_nut | pine nuts, pignoli, chilgoza
+peanut | legume | | allergen:peanut fatty protein | peanuts, groundnut, groundnuts, moongphali, moongfali, verkadalai, nilakadalai, roasted peanuts
+peanut butter | condiment | peanut | allergen:peanut fatty protein | peanut paste
+almond butter | condiment | almond | allergen:tree_nut |
+nutella | sweet | hazelnut | allergen:tree_nut allergen:dairy | chocolate hazelnut spread
+sesame seed | seed | | allergen:sesame | sesame seeds, sesame, til, ellu, எள், white sesame seeds, black sesame seeds, toasted sesame seeds
+tahini | condiment | sesame seed | allergen:sesame | tahina, sesame paste
+pumpkin seed | seed | | protein | pumpkin seeds, pepitas
+sunflower seed | seed | | | sunflower seeds
+chia seed | seed | | fibre | chia seeds, chia
+flaxseed | seed | | fibre | flaxseeds, flax seeds, flax seed, flax, linseed, ground flaxseed, alsi
+poppy seed | seed | | | poppy seeds, khus khus, kasa kasa
+
+# ---------------------------------------------------------------- dairy & eggs
+dairy | dairy | | allergen:dairy | dairy products
+milk | dairy | dairy | allergen:dairy | whole milk, 2% milk, low-fat milk, skim milk, nonfat milk, paal, dudh, doodh, பால், full fat milk, cow's milk
+buttermilk | dairy | milk | allergen:dairy | chaas, chaach, mor, moru, neer mor, low-fat buttermilk
+evaporated milk | dairy | milk | allergen:dairy |
+condensed milk | dairy | milk | allergen:dairy | sweetened condensed milk, milkmaid
+milk powder | dairy | milk | allergen:dairy | dry milk, powdered milk, nonfat dry milk
+cream | dairy | dairy | allergen:dairy fatty | heavy cream, heavy whipping cream, whipping cream, double cream, single cream, light cream, fresh cream, malai, table cream, chilled heavy cream, whipped cream, half-and-half, half and half
+sour cream | dairy | cream | allergen:dairy | soured cream
+creme fraiche | dairy | cream | allergen:dairy | crème fraîche, creme fraîche, crème fraiche
+butter | dairy | dairy | allergen:dairy fatty | unsalted butter, salted butter, makhan, vennai, வெண்ணெய், cultured butter, chilled butter
+ghee | dairy | butter | allergen:dairy fatty | clarified butter, nei, neyyi, நெய், desi ghee
+yogurt | dairy | dairy | allergen:dairy | yoghurt, curd, curds, dahi, thayir, thairu, தயிர், plain yogurt, whole-milk yogurt, whole milk yogurt, natural yogurt, hung curd, labneh
+greek yogurt | dairy | yogurt | allergen:dairy protein | greek-style yogurt, plain greek yogurt, strained yogurt
+cheese | dairy | dairy | allergen:dairy protein | cheeses, grated cheese, shredded cheese
+paneer | dairy | cheese | allergen:dairy protein | panneer, cottage cheese indian, chenna, chhena, பனீர்
+parmesan | dairy | cheese | allergen:dairy | parmesan cheese, parmigiano-reggiano, parmigiano reggiano, parmigiano, grana padano, pecorino, pecorino romano, romano
+mozzarella | dairy | cheese | allergen:dairy | mozzarella cheese, fresh mozzarella, buffalo mozzarella, burrata, bocconcini
+cheddar | dairy | cheese | allergen:dairy | cheddar cheese, sharp cheddar, white cheddar
+feta | dairy | cheese | allergen:dairy | feta cheese
+goat cheese | dairy | cheese | allergen:dairy | chevre, chèvre, fresh goat cheese, soft goat cheese
+ricotta | dairy | cheese | allergen:dairy | ricotta cheese, whole-milk ricotta
+cream cheese | dairy | cheese | allergen:dairy | neufchatel, philadelphia cream cheese
+cottage cheese | dairy | cheese | allergen:dairy protein |
+mascarpone | dairy | cheese | allergen:dairy |
+blue cheese | dairy | cheese | allergen:dairy | gorgonzola, roquefort, stilton, blue cheese crumbles
+swiss cheese | dairy | cheese | allergen:dairy | gruyere, gruyère, emmental, emmenthal, comte, comté, fontina, jarlsberg, raclette
+monterey jack | dairy | cheese | allergen:dairy | monterey jack cheese, jack cheese, pepper jack, queso fresco, cotija, queso blanco, oaxaca cheese, manchego, halloumi, brie, camembert, provolone, havarti, gouda, asiago, taleggio
+ice cream | dairy | cream | allergen:dairy | vanilla ice cream, gelato
+egg | egg | | allergen:egg protein | eggs, large egg, large eggs, whole egg, whole eggs, muttai, mutta, anda, முட்டை, hard-boiled eggs, hard boiled eggs, boiled eggs, egg white, egg whites, egg yolk, egg yolks, yolk, yolks, whites
+mayonnaise | condiment | | allergen:egg fatty | mayo, aioli
+
+# ---------------------------------------------------------------- meat, poultry, seafood
+meat | meat | | protein | meats, red meat
+beef | meat | meat | protein | ground beef, ground chuck, chuck, minced beef, beef mince, beef chuck, chuck roast, brisket, sirloin, ribeye, rib-eye, rib eye, flank steak, skirt steak, beef tenderloin, tenderloin, steak, steaks, short ribs, oxtail, stew beef, veal, hamburger, roast beef, corned beef, beef shank
+pork | meat | meat | protein | pork shoulder, pork loin, pork tenderloin, pork chops, pork belly, ground pork, pork butt, spareribs, baby back ribs, pork ribs, suckling pig
+bacon | meat | pork | protein fatty | bacon slices, thick-cut bacon, pancetta, guanciale, lardons, bacon strips
+ham | meat | pork | protein | prosciutto, serrano ham, smoked ham, ham hock, speck, jamón
+sausage | meat | meat | protein fatty | sausages, italian sausage, chorizo, andouille, kielbasa, bratwurst, salami, pepperoni, hot dogs, hot dog, frankfurters, merguez, soppressata, mortadella
+lamb | meat | meat | protein | lamb shoulder, lamb chops, leg of lamb, rack of lamb, ground lamb, lamb shank, lamb shanks, mutton, goat meat, goat, aattu kari, attu kari, aatu kari, mutton kari, gosht
+lard | meat | pork | fatty | pork fat, bacon fat, beef tallow, tallow, suet, schmaltz, duck fat
+poultry | poultry | | protein | fowl
+chicken | poultry | poultry | protein | chickens, chicken breast, chicken breasts, chicken breast halves, chicken thighs, chicken thigh, chicken legs, chicken drumsticks, chicken wings, whole chicken, rotisserie chicken, cooked chicken, ground chicken, kozhi, koli, murgh, murg, chicken tenders, boneless chicken, chicken pieces
+turkey | poultry | poultry | protein | ground turkey, turkey breast, turkey thighs, whole turkey
+duck | poultry | poultry | protein | duck breast, duck breasts, duck legs, goose, quail, cornish game hens, game hens, poussin
+seafood | fish | | protein | sea food
+fish | fish | seafood | allergen:fish protein | fishes, fish fillet, fish fillets, white fish, whitefish, meen, machli, machhi, மீன், fish steaks
+salmon | fish | fish | allergen:fish protein | salmon fillet, salmon fillets, smoked salmon, lox, wild salmon, caviar, salmon roe, roe, fish roe, trout roe
+tuna | fish | fish | allergen:fish protein | tuna steaks, canned tuna, ahi tuna, albacore
+cod | fish | fish | allergen:fish protein | cod fillets, halibut, haddock, pollock, hake, tilapia, sea bass, striped bass, branzino, snapper, red snapper, sole, flounder, trout, mackerel, catfish, swordfish, mahi-mahi, mahi mahi, sardines, sardine, vanjaram, seer fish, pomfret, rohu, black cod, arctic char
+anchovy | fish | fish | allergen:fish | anchovies, anchovy fillets, anchovy paste
+fish sauce | condiment | fish | allergen:fish | nam pla, nuoc mam
+shellfish | shellfish | seafood | allergen:shellfish protein | shell fish
+shrimp | shellfish | shellfish | allergen:shellfish protein | shrimps, prawn, prawns, jumbo shrimp, large shrimp, eral, iral, jhinga, chingri, tiger prawns
+crab | shellfish | shellfish | allergen:shellfish protein | crabmeat, crab meat, lump crabmeat, nandu, crabs
+lobster | shellfish | shellfish | allergen:shellfish protein | lobster tails, crayfish, crawfish, langoustines
+clam | shellfish | shellfish | allergen:shellfish | clams, littleneck clams, cockles
+mussel | shellfish | shellfish | allergen:shellfish | mussels
+scallop | shellfish | shellfish | allergen:shellfish protein | scallops, sea scallops, bay scallops
+oyster | shellfish | shellfish | allergen:shellfish | oysters
+squid | shellfish | shellfish | allergen:shellfish protein | calamari, octopus, cuttlefish, kanava
+oyster sauce | condiment | oyster | allergen:shellfish |
+shrimp paste | condiment | shrimp | allergen:shellfish | belacan, dried shrimp
+
+# ---------------------------------------------------------------- broths, stocks
+broth | broth | | | stock, broths, stocks, bouillon, bouillon cube, stock cube
+chicken broth | broth | chicken | | chicken stock, low-sodium chicken broth, low sodium chicken broth, reduced-sodium chicken broth, chicken bouillon
+beef broth | broth | beef | | beef stock, veal stock, bone broth, beef bouillon, demi-glace
+fish stock | broth | fish | allergen:fish | seafood stock, clam juice, dashi, bonito flakes, katsuobushi
+vegetable broth | broth | | | vegetable stock, veggie broth, low-sodium vegetable broth
+
+# ---------------------------------------------------------------- oils & fats
+oil | oil | | staple fatty | cooking oil, neutral oil, ennai, எண்ணெய், refined oil, oil for frying, frying oil
+vegetable oil | oil | oil | staple fatty | canola oil, sunflower oil, safflower oil, grapeseed oil, rapeseed oil, corn oil, soybean oil, rice bran oil, vegetable oil spray, canola oil spray, nonstick spray, cooking spray, oil spray
+olive oil | oil | oil | staple fatty | extra-virgin olive oil, extra virgin olive oil, virgin olive oil, evoo, light olive oil, pure olive oil
+coconut oil | oil | oil | fatty | virgin coconut oil, thengai ennai, refined coconut oil
+sesame oil | oil | oil | allergen:sesame fatty | toasted sesame oil, asian sesame oil, gingelly oil, nallennai, til oil, nalla ennai
+peanut oil | oil | oil | maybe:peanut fatty | groundnut oil, kadalai ennai
+mustard oil | oil | oil | allergen:mustard fatty | sarson ka tel
+shortening | oil | | fatty | vegetable shortening, crisco
+margarine | oil | | maybe:dairy fatty | vegan butter, plant butter
+
+# ---------------------------------------------------------------- sweeteners
+sugar | sweetener | | | sugars, granulated sugar, white sugar, caster sugar, superfine sugar, cane sugar, sakkarai, sakkarai, cheeni, chini, raw sugar, turbinado sugar, demerara sugar, sanding sugar, sugar cubes
+brown sugar | sweetener | sugar | | light brown sugar, dark brown sugar, golden brown sugar, muscovado, muscovado sugar, packed brown sugar
+powdered sugar | sweetener | sugar | | confectioners' sugar, confectioners sugar, icing sugar, powdered sugar for dusting
+jaggery | sweetener | sugar | | gur, vellam, karupatti, palm jaggery, panela, piloncillo, palm sugar, coconut sugar
+honey | sweetener | | nonvegan | raw honey, wildflower honey, mild honey, thaen, தேன், shahad
+maple syrup | sweetener | | | pure maple syrup, grade b maple syrup
+molasses | sweetener | | | treacle, blackstrap molasses
+corn syrup | sweetener | | | light corn syrup, dark corn syrup, glucose syrup, golden syrup
+agave | sweetener | | | agave nectar, agave syrup
+simple syrup | sweetener | sugar | | sugar syrup
+
+# ---------------------------------------------------------------- condiments & sauces
+vinegar | condiment | | | vinegars, white vinegar, distilled white vinegar, red wine vinegar, white wine vinegar, champagne vinegar, sherry vinegar, apple cider vinegar, cider vinegar, malt vinegar, coconut vinegar
+balsamic vinegar | condiment | vinegar | | balsamic, aged balsamic, balsamic glaze
+rice vinegar | condiment | vinegar | | rice wine vinegar, unseasoned rice vinegar, seasoned rice vinegar
+soy sauce | condiment | | allergen:soy allergen:gluten | low-sodium soy sauce, low sodium soy sauce, light soy sauce, dark soy sauce, shoyu, tamari, kecap manis
+miso | condiment | soybean | allergen:soy | white miso, red miso, miso paste, shiro miso
+mustard | condiment | | allergen:mustard | dijon mustard, dijon, whole-grain mustard, whole grain mustard, grainy mustard, yellow mustard, dry mustard, mustard powder, english mustard, coarse-grain mustard
+ketchup | condiment | tomato | | catsup, tomato ketchup
+worcestershire sauce | condiment | | maybe:fish | worcestershire, lea and perrins
+hot sauce | condiment | chili pepper | spicy | hot pepper sauce, tabasco, sriracha, sambal oelek, sambal, chili sauce, chilli sauce, chili garlic sauce, harissa, gochujang, red curry paste, green curry paste, thai curry paste, curry paste, peri peri, piri piri
+salsa | condiment | tomato | | pico de gallo, salsa verde
+pesto | sauce | basil | allergen:dairy allergen:tree_nut | basil pesto, genovese pesto
+hoisin sauce | condiment | | allergen:soy | hoisin
+barbecue sauce | condiment | | | bbq sauce, barbeque sauce
+mirin | condiment | | | sweet rice wine
+sake | alcohol | | | shaoxing wine, chinese rice wine, rice wine, cooking wine
+horseradish | condiment | | | prepared horseradish, wasabi
+chutney | condiment | | | chutneys, mango chutney, tamarind chutney, mint chutney, coconut chutney
+pickle | condiment | | | pickles, achar, oorugai, dill pickles, cornichons, relish, pickled jalapenos
+jam | sweet | fruit | | jams, preserves, jelly, marmalade, apricot jam, raspberry jam, fruit preserves
+coffee | beverage | | | espresso, instant coffee, espresso powder, instant espresso powder, brewed coffee, coffee beans, filter coffee, decoction
+tea | beverage | | | chai, black tea, green tea, tea bags, matcha, chai patti
+almond milk | dairy_alt | almond | allergen:tree_nut | unsweetened almond milk
+soy milk | dairy_alt | soybean | allergen:soy | soymilk
+oat milk | dairy_alt | oats | maybe:gluten |
+plant milk | dairy_alt | | | non-dairy milk, nondairy milk, plant-based milk, rice milk
+nutritional yeast | condiment | | | nooch
+vegan cheese | dairy_alt | | | dairy-free cheese, plant-based cheese
+water | other | | staple | cold water, hot water, warm water, ice water, boiling water, lukewarm water, filtered water, tannir, thanni, paani
+ice | other | | staple | ice cubes, crushed ice
+sparkling water | beverage | | | club soda, soda water, seltzer, tonic water, tonic
+juice | beverage | fruit | | fruit juice, grapefruit juice, pomegranate juice, cranberry juice, pineapple juice, apple juice, tomato juice, carrot juice
+
+# ---------------------------------------------------------------- alcohol
+alcohol | alcohol | | | liquor, spirits, alcoholic
+wine | alcohol | alcohol | | wines, white wine, dry white wine, red wine, dry red wine, rosé, sparkling wine, champagne, prosecco, marsala, madeira, port, sherry, dry sherry, vermouth, sweet vermouth, dry vermouth
+beer | alcohol | alcohol | maybe:gluten | ale, lager, stout, ipa
+spirit | alcohol | alcohol | | rum, dark rum, white rum, vodka, gin, tequila, whiskey, whisky, bourbon, rye whiskey, scotch, brandy, cognac, mezcal, liqueur, triple sec, cointreau, grand marnier, kahlua, amaretto, kirsch, bitters, angostura bitters, campari, aperol, calvados, creme de cassis, absinthe, st germain, st-germain, elderflower liqueur, cachaca, lillet blanc, lillet, grappa, chartreuse, green chartreuse, yellow chartreuse, creme de menthe, pimm's, maraschino liqueur, limoncello, sambuca, ouzo, pisco, sake cocktail
+
+# ---------------------------------------------------------------- additions from corpus coverage analysis
+grapefruit | fruit | fruit | | grapefruits, pink grapefruit, grapefruit zest
+peppermint extract | baking | | | mint extract
+food coloring | baking | | | food colouring, gel food coloring
+xanthan gum | baking | | |
+matzo meal | flour | | allergen:gluten | matzo, matzoh, matzo cake meal, cake meal
+seasoning blend | spice | spice | | old bay seasoning, old bay, cajun seasoning, creole seasoning, taco seasoning, poultry seasoning, ras el hanout, berbere, adobo seasoning, everything bagel seasoning, jerk seasoning, panch phoron
+marshmallow | sweet | | nonveg | marshmallows, mini marshmallows, marshmallow creme, marshmallow fluff
+seaweed | vegetable | | | kombu, nori, wakame, kelp, dried kombu, nori sheets, hijiki, dulse
+hemp seed | seed | | protein | hemp seeds, hemp hearts
+dulce de leche | dairy | milk | allergen:dairy | cajeta, caramel sauce, caramel, butterscotch
+kimchi | vegetable | cabbage | maybe:fish maybe:shellfish | kimchee
+wheat germ | grain | | allergen:gluten |
+popcorn | grain | corn | | popcorn kernels
+shiso | herb | herb | | shiso leaves, perilla
+edible flowers | herb | | | rose petals, dried rose petals, lavender, dried lavender, hibiscus
+jicama | vegetable | vegetable | |
+cornbread | bread | | maybe:dairy maybe:egg |
+mascarpone cream | dairy | cream | allergen:dairy |
+chickpea pasta | pasta | chickpea | |
+chestnut | nut | nut | allergen:tree_nut | chestnuts, whole chestnuts, roasted chestnuts
+wonton wrapper | pasta | | allergen:gluten maybe:egg | wonton wrappers, dumpling wrappers, gyoza wrappers, spring roll wrappers, egg roll wrappers, rice paper, rice paper wrappers
+sauerkraut | vegetable | cabbage | |
+buckwheat | grain | | fibre | buckwheat groats, kasha, buckwheat flour, kuttu
+amaranth | grain | | fibre | rajgira
+chervil | herb | herb | | chervil sprigs, fresh chervil
+cacao nibs | baking | | | cocoa nibs
+hominy | grain | corn | | white hominy, pozole
+persimmon | fruit | fruit | | persimmons, fuyu persimmons
+kumquat | fruit | fruit | | kumquats
+liquid smoke | condiment | | |
+teriyaki sauce | condiment | | allergen:soy allergen:gluten | teriyaki
+grenadine | sweetener | | | pomegranate molasses
+peperoncini | vegetable | chili pepper | | pepperoncini
+maple extract | baking | | |
+pectin | baking | | | liquid pectin, powdered pectin
