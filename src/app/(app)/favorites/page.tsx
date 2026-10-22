@@ -2,13 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Leaf, Utensils, Flame, X, Trash2 } from "lucide-react";
-import { createClient } from "@supabase/supabase-js";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+import Link from "next/link";
+import { Leaf, Utensils, Flame, Trash2 } from "lucide-react";
 
 type Recipe = {
   id: string;
@@ -19,6 +14,7 @@ type Recipe = {
   carbs?: number;
   instructions?: string;
   tag?: string; // Vegan, Vegetarian, High-Protein, etc.
+  recipe_ref?: string | null; // id in the local recipe store
 };
 
 export default function FavoritesPage() {
@@ -64,13 +60,13 @@ export default function FavoritesPage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen md:ml-64 bg-gradient-to-br from-sky-50 via-emerald-50 to-teal-100 text-slate-800 px-6 md:px-12 lg:px-16 py-10">
+    <div className="relative min-h-screen text-slate-800 px-6 md:px-12 lg:px-16 py-10">
       <motion.h1
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-4xl font-extrabold text-teal-700 mb-4 text-center"
+        className="display text-4xl sm:text-5xl mb-4 text-center"
       >
-        ❤️ Your Favorite Recipes
+        Your Favorite Recipes
       </motion.h1>
 
       {loading ? (
@@ -84,20 +80,23 @@ export default function FavoritesPage() {
               animate={{ opacity: 1, scale: 1 }}
               whileHover={{ y: -5 }}
               transition={{ duration: 0.3, delay: i * 0.05 }}
-              className="relative p-6 rounded-3xl bg-white/80 border border-slate-200 shadow-md hover:shadow-xl backdrop-blur-md"
+              className="relative p-6 rounded-lg bg-white/80 border border-slate-200 shadow-stamp hover:shadow-xl backdrop-blur-md"
             >
               <h2 className="text-xl font-semibold text-teal-700 mb-2">
                 {recipe.recipe_name}
               </h2>
 
               <div className="text-slate-600 mb-4 space-y-1 text-sm">
+                {(recipe.calories || recipe.protein || recipe.fat || recipe.carbs) && (
+                  <p className="text-xs text-slate-400">Saved nutrition values (per serving, as stored):</p>
+                )}
                 {recipe.calories && <p>🔥 {recipe.calories} kcal</p>}
                 {recipe.protein && <p>💪 {recipe.protein} g protein</p>}
                 {recipe.fat && <p>🥑 {recipe.fat} g fat</p>}
                 {recipe.carbs && <p>🍞 {recipe.carbs} g carbs</p>}
               </div>
 
-              <span
+              {recipe.tag && recipe.tag !== "favorite" && <span
                 className={`inline-flex items-center gap-1 text-sm px-3 py-1.5 rounded-full font-medium mb-4 ${
                   recipe.tag === "Vegan"
                     ? "bg-green-100 text-green-700"
@@ -109,16 +108,22 @@ export default function FavoritesPage() {
                 {recipe.tag === "Vegan" && <Leaf size={15} />}
                 {recipe.tag === "High-Protein" && <Flame size={15} />}
                 {recipe.tag === "Vegetarian" && <Utensils size={15} />}
-                {recipe.tag || "Other"}
-              </span>
+                {recipe.tag}
+              </span>}
 
               <div className="flex justify-between items-center mt-3">
-                <button
-                  onClick={() => setSelectedRecipe(recipe)}
-                  className="text-teal-600 font-semibold hover:text-teal-800 transition-colors"
-                >
-                  View Recipe →
-                </button>
+                {recipe.recipe_ref ? (
+                  <Link href={`/recipes/${recipe.recipe_ref}`} className="text-teal-600 font-semibold hover:text-teal-800 transition-colors">
+                    Open recipe →
+                  </Link>
+                ) : (
+                  <button
+                    onClick={() => setSelectedRecipe(recipe)}
+                    className="text-teal-600 font-semibold hover:text-teal-800 transition-colors"
+                  >
+                    View Recipe →
+                  </button>
+                )}
                 <button
                   onClick={() => removeFavorite(recipe.id)}
                   className="p-2 rounded-full hover:bg-red-100 text-red-600 transition"
@@ -144,12 +149,13 @@ export default function FavoritesPage() {
       initial={{ opacity: 0, scale: 0.9, y: 30 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 0.25 }}
-      className="relative bg-gradient-to-br from-white via-teal-50 to-emerald-50 rounded-3xl shadow-2xl p-6 sm:p-8 max-w-md w-full max-h-[75vh] overflow-hidden"
+      className="relative rounded-3xl shadow-2xl p-6 sm:p-8 max-w-md w-full max-h-[75vh] overflow-hidden"
     >
       {/* ❌ Close button */}
       <button
         onClick={() => setSelectedRecipe(null)}
         className="absolute top-4 right-4 text-slate-500 hover:text-slate-700 transition"
+        aria-label="Close"
       >
         ✕
       </button>
@@ -160,7 +166,7 @@ export default function FavoritesPage() {
       </h2>
 
       {/* Tag badge */}
-      <span
+      {selectedRecipe.tag && selectedRecipe.tag !== "favorite" && <span
         className={`inline-flex items-center gap-1 text-sm px-3 py-1.5 rounded-full font-medium mb-4 ${
           selectedRecipe.tag === "Vegan"
             ? "bg-green-100 text-green-700"
@@ -169,8 +175,8 @@ export default function FavoritesPage() {
             : "bg-sky-100 text-sky-700"
         }`}
       >
-        {selectedRecipe.tag || "Other"}
-      </span>
+        {selectedRecipe.tag}
+      </span>}
 
       {/* Scrollable Instructions */}
       <div className="overflow-y-auto pr-2 max-h-[50vh] text-slate-700 text-sm sm:text-base leading-relaxed custom-scrollbar">
