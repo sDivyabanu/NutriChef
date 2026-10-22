@@ -43,10 +43,10 @@ export default function TrackPage() {
 
   return (
     <div className="max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold text-slate-800 mb-8">Track</h1>
+      <h1 className="display text-3xl font-bold text-slate-800 mb-8">Track</h1>
 
       {/* Hydration Section */}
-      <section className="mb-12 p-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-white border border-slate-200 shadow-sm">
+      <section className="mb-12 p-6 rounded-lg border border-slate-200 shadow-stamp-sm">
         <h2 className="text-2xl font-semibold text-emerald-600 mb-4">Hydration</h2>
         <p className="text-slate-600 mb-4">
           Track your daily water intake. Each click = 1 glass.
@@ -78,7 +78,7 @@ export default function TrackPage() {
       </section>
 
       {/* Weight Section */}
-      <section className="p-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-white border border-slate-200 shadow-sm">
+      <section className="p-6 rounded-lg border border-slate-200 shadow-stamp-sm">
         <h2 className="text-2xl font-semibold text-emerald-600 mb-4">Weight</h2>
         <p className="text-slate-600 mb-4">
           Log your weight to monitor progress over time.
@@ -105,7 +105,7 @@ export default function TrackPage() {
             {weightLogs.map((w, idx) => (
               <li
                 key={idx}
-                className="p-3 rounded-xl bg-white border border-slate-200 text-slate-700 shadow-sm"
+                className="p-3 rounded-xl bg-white border border-slate-200 text-slate-700 shadow-stamp-sm"
               >
                 {w} kg
               </li>
