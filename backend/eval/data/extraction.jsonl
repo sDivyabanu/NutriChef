@@ -1,0 +1,80 @@
+{"id": "x001", "split": "dev", "text": "I have 2 tomatoes, half an onion, 100g paneer and some capsicum.", "expect": {"available": ["tomato", "onion", "paneer", "bell pepper"]}, "quantities": {"tomato": [2, null], "onion": [0.5, null], "paneer": [100, "g"]}, "tags": ["quantity", "regional"]}
+{"id": "x002", "split": "dev", "text": "What can I cook with brinjal, curd and coriander leaves?", "expect": {"available": ["eggplant", "yogurt", "cilantro"]}, "tags": ["regional", "multiword"]}
+{"id": "x003", "split": "dev", "text": "pasta recipes without mushrooms", "expect": {"preferred": ["pasta"], "excluded": ["mushroom"]}, "tags": ["negation"]}
+{"id": "x004", "split": "dev", "text": "I've got chickpeas, spinach and a can of coconut milk", "expect": {"available": ["chickpea", "spinach", "coconut milk"]}, "quantities": {"coconut milk": [1, "can"]}, "tags": ["quantity", "multiword"]}
+{"id": "x005", "split": "dev", "text": "no peanuts or cashews please", "expect": {"excluded": ["peanut", "cashew"]}, "tags": ["negation", "list"]}
+{"id": "x006", "split": "dev", "text": "tomatos, onoins and garlc", "expect": {"available": ["tomato", "onion", "garlic"]}, "tags": ["typo", "bare-list"]}
+{"id": "x007", "split": "dev", "text": "dinner with chicken thighs and sweet potatoes", "expect": {"required": ["chicken", "sweet potato"]}, "tags": ["multiword"]}
+{"id": "x008", "split": "dev", "text": "Something with aubergine and courgette", "expect": {"required": ["eggplant", "zucchini"]}, "tags": ["regional"]}
+{"id": "x009", "split": "dev", "text": "I have 3 eggs, 1 cup milk and 2 tbsp butter", "expect": {"available": ["egg", "milk", "butter"]}, "quantities": {"egg": [3, null], "milk": [1, "cup"], "butter": [2, "tbsp"]}, "tags": ["quantity"]}
+{"id": "x010", "split": "dev", "text": "vegan curry without coconut", "expect": {"excluded": ["coconut"]}, "tags": ["negation"]}
+{"id": "x011", "split": "dev", "text": "I don't have eggs, what cake can I make?", "expect": {"unavailable": ["egg"]}, "tags": ["negation"]}
+{"id": "x012", "split": "dev", "text": "Enkitta tomato onion iruku", "expect": {"available": ["tomato", "onion"]}, "tags": ["tamil"]}
+{"id": "x013", "split": "dev", "text": "kathirikai vechu enna cook pannalam", "expect": {"available": ["eggplant"]}, "tags": ["tamil"]}
+{"id": "x014", "split": "dev", "text": "spicy soup with lentils, no onion and no garlic", "expect": {"required": ["lentil"], "excluded": ["onion", "garlic"]}, "tags": ["negation", "list"]}
+{"id": "x015", "split": "dev", "text": "using up leftover rice and frozen peas", "expect": {"available": ["rice", "peas"]}, "tags": ["available-cue"]}
+{"id": "x016", "split": "dev", "text": "1 1/2 cups basmati rice and 2 green chillies", "expect": {"available": ["basmati rice", "chili pepper"]}, "quantities": {"basmati rice": [1.5, "cup"], "chili pepper": [2, null]}, "tags": ["quantity", "bare-list"]}
+{"id": "x017", "split": "dev", "text": "I'm allergic to shellfish, any seafood pasta?", "expect": {"excluded": ["shellfish"], "preferred": ["seafood", "pasta"]}, "tags": ["negation", "allergy"]}
+{"id": "x018", "split": "dev", "text": "ladies finger fry", "expect": {"preferred": ["okra"]}, "tags": ["regional"]}
+{"id": "x019", "split": "dev", "text": "paneer butter masala", "expect": {"preferred": ["paneer", "butter"]}, "tags": ["dish-name"]}
+{"id": "x020", "split": "dev", "text": "Recipes with jeera, haldi and hing", "expect": {"required": ["cumin", "turmeric", "asafoetida"]}, "tags": ["regional"]}
+{"id": "x021", "split": "dev", "text": "a quick salad with rocket, feta and cherry tomatoes", "expect": {"required": ["arugula", "feta", "cherry tomato"]}, "tags": ["regional", "multiword"]}
+{"id": "x022", "split": "dev", "text": "breakfast without eggs or dairy", "expect": {"excluded": ["egg", "dairy"]}, "tags": ["negation"]}
+{"id": "x023", "split": "dev", "text": "I have half a cabbage and two carrots", "expect": {"available": ["cabbage", "carrot"]}, "quantities": {"cabbage": [0.5, null], "carrot": [2, null]}, "tags": ["quantity"]}
+{"id": "x024", "split": "dev", "text": "gluten-free bread with almond flour", "expect": {"required": ["almond flour"]}, "tags": ["multiword"]}
+{"id": "x025", "split": "dev", "text": "spring onions, soy sauce, tofu", "expect": {"available": ["spring onion", "soy sauce", "tofu"]}, "tags": ["bare-list", "multiword"]}
+{"id": "x026", "split": "dev", "text": "avoid bell peppers but I love mushrooms", "expect": {"excluded": ["bell pepper"], "preferred": ["mushroom"]}, "tags": ["negation"]}
+{"id": "x027", "split": "dev", "text": "dal tadka without ghee", "expect": {"preferred": ["lentil"], "excluded": ["ghee"]}, "tags": ["negation", "regional"]}
+{"id": "x028", "split": "dev", "text": "I have aloo and gobi", "expect": {"available": ["potato", "cauliflower"]}, "tags": ["regional"]}
+{"id": "x029", "split": "dev", "text": "200 ml cream and 250g mushrooms", "expect": {"available": ["cream", "mushroom"]}, "quantities": {"cream": [200, "ml"], "mushroom": [250, "g"]}, "tags": ["quantity", "bare-list"]}
+{"id": "x030", "split": "dev", "text": "pepper chicken", "expect": {"preferred": ["black pepper", "chicken"]}, "tags": ["ambiguous", "dish-name"]}
+{"id": "x031", "split": "dev", "text": "panner tikka with capsicm", "expect": {"preferred": ["paneer"], "required": ["bell pepper"]}, "tags": ["typo", "regional"]}
+{"id": "x032", "split": "dev", "text": "sambar without drumstick", "expect": {"excluded": ["drumstick"]}, "tags": ["negation", "regional"]}
+{"id": "x033", "split": "dev", "text": "vegetables I have: beetroot, radish, beans", "expect": {"available": ["beet", "radish", "legume|green bean"]}, "tags": ["available-cue", "ambiguous"]}
+{"id": "x034", "split": "dev", "text": "no nuts, no sesame, no soy", "expect": {"excluded": ["nut", "sesame seed"], "excluded_groups": ["soy"]}, "tags": ["negation", "allergy"]}
+{"id": "x035", "split": "dev", "text": "thakkali sadham", "expect": {"preferred": ["tomato", "rice"]}, "tags": ["tamil", "dish-name"]}
+{"id": "x036", "split": "dev", "text": "chicken biryani for 4 people", "expect": {"preferred": ["chicken"]}, "tags": ["dish-name"]}
+{"id": "x037", "split": "dev", "text": "I have a dozen eggs and some spinach", "expect": {"available": ["egg", "spinach"]}, "quantities": {"egg": [12, null]}, "tags": ["quantity"]}
+{"id": "x038", "split": "dev", "text": "oats, banana, honey", "expect": {"available": ["oats", "banana", "honey"]}, "tags": ["bare-list"]}
+{"id": "x039", "split": "dev", "text": "something filling with quinoa but without kale", "expect": {"required": ["quinoa"], "excluded": ["kale"]}, "tags": ["negation"]}
+{"id": "x040", "split": "dev", "text": "prawns and garlic stir fry, not spicy", "expect": {"preferred": ["shrimp", "garlic"]}, "tags": ["regional", "negation-quality"]}
+{"id": "x041", "split": "dev", "text": "Ennai illama poriyal with beans and carrot", "expect": {"excluded": ["oil"], "required": ["green bean|legume", "carrot"]}, "tags": ["tamil", "negation"]}
+{"id": "x042", "split": "dev", "text": "I have maida, sugar and butter but no eggs", "expect": {"available": ["flour", "sugar", "butter"], "excluded|unavailable": ["egg"]}, "tags": ["regional", "negation"]}
+{"id": "x043", "split": "dev", "text": "hot sauce wings", "expect": {"preferred": ["hot sauce"]}, "tags": ["dish-name", "multiword"]}
+{"id": "x044", "split": "dev", "text": "what can i make with 4 potatos and 1 large onion", "expect": {"available": ["potato", "onion"]}, "quantities": {"potato": [4, null], "onion": [1, null]}, "tags": ["typo", "quantity"]}
+{"id": "x045", "split": "dev", "text": "I hate cilantro, give me a mexican dish", "expect": {"excluded": ["cilantro"]}, "tags": ["negation"]}
+{"id": "x101", "split": "test", "text": "I have 3 potatoes, 2 onions and a handful of spinach", "expect": {"available": ["potato", "onion", "spinach"]}, "quantities": {"potato": [3, null], "onion": [2, null], "spinach": [1, "handful"]}, "tags": ["quantity"]}
+{"id": "x102", "split": "test", "text": "What can I make with paneer, peas and tomatoes?", "expect": {"available": ["paneer", "peas", "tomato"]}, "tags": ["list"]}
+{"id": "x103", "split": "test", "text": "dessert without eggs and without gelatin", "expect": {"excluded": ["egg", "gelatin"]}, "tags": ["negation"]}
+{"id": "x104", "split": "test", "text": "Got some zucchini, red onion and feta cheese", "expect": {"available": ["zucchini", "red onion", "feta"]}, "tags": ["multiword"]}
+{"id": "x105", "split": "test", "text": "a curry with chick peas and spinach but no tomatoes", "expect": {"required": ["chickpea", "spinach"], "excluded": ["tomato"]}, "tags": ["negation", "typo"]}
+{"id": "x106", "split": "test", "text": "vendakkai and vengayam iruku", "expect": {"available": ["okra", "onion"]}, "tags": ["tamil"]}
+{"id": "x107", "split": "test", "text": "100 g tofu, 2 tbsp soy sauce, 1 tsp sesame oil", "expect": {"available": ["tofu", "soy sauce", "sesame oil"]}, "quantities": {"tofu": [100, "g"], "soy sauce": [2, "tbsp"], "sesame oil": [1, "tsp"]}, "tags": ["quantity", "bare-list"]}
+{"id": "x108", "split": "test", "text": "I can't eat dairy, need a creamy pasta", "expect": {"excluded": ["dairy"], "preferred": ["pasta"]}, "tags": ["negation"]}
+{"id": "x109", "split": "test", "text": "salad with cucmber, tomatoe and olives", "expect": {"required": ["cucumber", "tomato", "olive"]}, "tags": ["typo"]}
+{"id": "x110", "split": "test", "text": "recipes using methi and besan", "expect": {"required": ["fenugreek leaves", "chickpea flour"]}, "tags": ["regional"]}
+{"id": "x111", "split": "test", "text": "no onion no garlic jain sabzi with cabbage", "expect": {"excluded": ["onion", "garlic"], "preferred": ["cabbage"]}, "tags": ["negation"]}
+{"id": "x112", "split": "test", "text": "I have half a cup of yogurt and 2 cucumbers", "expect": {"available": ["yogurt", "cucumber"]}, "quantities": {"yogurt": [0.5, "cup"], "cucumber": [2, null]}, "tags": ["quantity"]}
+{"id": "x113", "split": "test", "text": "Meen kuzhambu without tamarind", "expect": {"preferred": ["fish"], "excluded": ["tamarind"]}, "tags": ["tamil", "negation"]}
+{"id": "x114", "split": "test", "text": "brocoli, cheddar and pasta", "expect": {"available": ["broccoli", "cheddar", "pasta"]}, "tags": ["typo", "bare-list"]}
+{"id": "x115", "split": "test", "text": "vegetarian chili, no beans", "expect": {"excluded": ["legume"]}, "tags": ["negation", "ambiguous"]}
+{"id": "x116", "split": "test", "text": "I've got scallions, ginger and some leftover chicken", "expect": {"available": ["spring onion", "ginger", "chicken"]}, "tags": ["regional"]}
+{"id": "x117", "split": "test", "text": "smoothie with mango and curd, no sugar", "expect": {"required": ["mango", "yogurt"], "excluded": ["sugar"]}, "tags": ["negation", "regional"]}
+{"id": "x118", "split": "test", "text": "Recipes without pork or beef", "expect": {"excluded": ["pork", "beef"]}, "tags": ["negation", "list"]}
+{"id": "x119", "split": "test", "text": "2 cloves garlic, 1 inch ginger, 1 green chilli", "expect": {"available": ["garlic", "ginger", "chili pepper"]}, "quantities": {"garlic": [2, "clove"], "ginger": [1, "inch"], "chili pepper": [1, null]}, "tags": ["quantity", "bare-list"]}
+{"id": "x120", "split": "test", "text": "urulaikizhangu podimas", "expect": {"preferred": ["potato"]}, "tags": ["tamil", "dish-name"]}
+{"id": "x121", "split": "test", "text": "I'm out of butter; something with olive oil and lemon", "expect": {"unavailable": ["butter"], "required": ["olive oil", "lemon"]}, "tags": ["negation"]}
+{"id": "x122", "split": "test", "text": "pumpkin soup without cream", "expect": {"preferred": ["pumpkin"], "excluded": ["cream"]}, "tags": ["negation"]}
+{"id": "x123", "split": "test", "text": "I have chicken breast, bell peppers and rice", "expect": {"available": ["chicken", "bell pepper", "rice"]}, "tags": ["multiword"]}
+{"id": "x124", "split": "test", "text": "nut-free cookies with oats", "expect": {"excluded": ["nut"], "required": ["oats"]}, "tags": ["negation"]}
+{"id": "x125", "split": "test", "text": "kidney beans, corn and avocado", "expect": {"available": ["kidney bean", "corn", "avocado"]}, "tags": ["bare-list", "multiword"]}
+{"id": "x126", "split": "test", "text": "no coriander, I want a tomato rasam", "expect": {"excluded": ["cilantro"], "preferred": ["tomato"]}, "tags": ["negation", "regional"]}
+{"id": "x127", "split": "test", "text": "milagu rasam with poondu", "expect": {"preferred": ["black pepper"], "required": ["garlic"]}, "tags": ["tamil"]}
+{"id": "x128", "split": "test", "text": "Fish curry without coconut milk", "expect": {"preferred": ["fish"], "excluded": ["coconut milk"]}, "tags": ["negation", "multiword"]}
+{"id": "x129", "split": "test", "text": "a dozen prawns, juice of 1 lemon and parsley", "expect": {"available": ["shrimp", "lemon juice", "parsley"]}, "quantities": {"shrimp": [12, null]}, "tags": ["quantity", "regional"]}
+{"id": "x130", "split": "test", "text": "I have mushroms and spinnach", "expect": {"available": ["mushroom", "spinach"]}, "tags": ["typo"]}
+{"id": "x131", "split": "test", "text": "Lunch with tempeh, no soy sauce", "expect": {"required": ["tempeh"], "excluded": ["soy sauce"]}, "tags": ["negation"]}
+{"id": "x132", "split": "test", "text": "green beans and almonds", "expect": {"available": ["green bean", "almond"]}, "tags": ["bare-list", "multiword"]}
+{"id": "x133", "split": "test", "text": "cake with dates and walnuts, not too sweet", "expect": {"required": ["date", "walnut"]}, "tags": ["ambiguous"]}
+{"id": "x134", "split": "test", "text": "allergic to eggs and sesame", "expect": {"excluded": ["egg", "sesame seed"]}, "tags": ["allergy", "negation"]}
+{"id": "x135", "split": "test", "text": "dinner using cottage cheese and spinach", "expect": {"required|available": ["cottage cheese|paneer", "spinach"]}, "tags": ["multiword"]}

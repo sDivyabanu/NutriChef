@@ -1,0 +1,30 @@
+{"id": "r01", "split": "dev", "query": "I have tomatoes, rice and onions. What can I cook?", "all": [["tomato"], ["rice"], ["onion", "shallot", "scallion"]], "none": []}
+{"id": "r02", "split": "dev", "query": "chicken curry without coconut", "all": [["chicken"], ["curry"]], "none": ["coconut"]}
+{"id": "r03", "split": "dev", "query": "vegetarian pasta with spinach", "all": [["pasta", "spaghetti", "penne", "linguine", "fettuccine", "rigatoni", "orecchiette", "fusilli", "macaroni", "lasagna", "noodle"], ["spinach"]], "none": ["chicken", "beef", "pork", "bacon", "sausage", "shrimp", "fish", "anchov", "pancetta", "prosciutto", "salmon", "tuna", "lamb", "turkey", "ham "]}
+{"id": "r04", "split": "dev", "query": "chocolate dessert without nuts", "all": [["chocolate", "cocoa"]], "none": ["almond", "walnut", "pecan", "hazelnut", "peanut", "cashew", "pistachio", "macadamia", "pine nut", "nutella", "praline"]}
+{"id": "r05", "split": "dev", "query": "what can I make with chickpeas and spinach", "all": [["chickpea", "garbanzo"], ["spinach"]], "none": []}
+{"id": "r06", "split": "dev", "query": "salmon without dill", "all": [["salmon"]], "none": ["dill"]}
+{"id": "r07", "split": "dev", "query": "lentil soup", "all": [["lentil", "dal "], ["soup"]], "none": []}
+{"id": "r08", "split": "dev", "query": "paneer recipes", "all": [["paneer"]], "none": []}
+{"id": "r09", "split": "dev", "query": "eggplant dishes without tomato", "all": [["eggplant", "aubergine"]], "none": ["tomato"]}
+{"id": "r10", "split": "dev", "query": "brinjal and potato", "all": [["eggplant", "aubergine", "brinjal"], ["potato"]], "none": []}
+{"id": "r11", "split": "dev", "query": "tofu stir fry without soy sauce", "all": [["tofu"]], "none": ["soy sauce", "tamari", "shoyu"]}
+{"id": "r12", "split": "dev", "query": "capsicum and cheese", "all": [["bell pepper", "capsicum", "red pepper", "green pepper", "yellow pepper", "sweet pepper"], ["cheese", "mozzarella", "cheddar", "parmesan", "feta", "ricotta", "gruy", "pecorino", "monterey", "goat cheese", "fontina", "provolone"]], "none": []}
+{"id": "r13", "split": "dev", "query": "mushroom risotto", "all": [["mushroom"], ["arborio", "carnaroli", "risotto"]], "none": []}
+{"id": "r14", "split": "dev", "query": "dairy-free banana bread", "all": [["banana"]], "none": ["butter", "milk", "cream", "cheese", "yogurt", "ghee"]}
+{"id": "r15", "split": "dev", "query": "shrimp tacos", "all": [["shrimp", "prawn"], ["tortilla", "taco"]], "none": []}
+{"id": "r16", "split": "test", "query": "I have eggs, cheese and spinach", "all": [["egg"], ["cheese", "parmesan", "feta", "ricotta", "cheddar", "mozzarella", "gruy", "goat cheese", "pecorino", "fontina"], ["spinach"]], "none": []}
+{"id": "r17", "split": "test", "query": "beef stew without wine", "all": [["beef", "chuck"], ["stew"]], "none": ["wine", "sherry", "vermouth", "port", "marsala", "madeira", "beer", "brandy", "cognac"]}
+{"id": "r18", "split": "test", "query": "vegan curry", "all": [["curry"]], "none": ["chicken", "beef", "pork", "lamb", "shrimp", "fish", "egg", "milk", "butter", "ghee", "cream", "yogurt", "cheese", "paneer", "honey", "anchov", "turkey"]}
+{"id": "r19", "split": "test", "query": "cauliflower with turmeric", "all": [["cauliflower"], ["turmeric"]], "none": []}
+{"id": "r20", "split": "test", "query": "aubergine and chickpeas", "all": [["eggplant", "aubergine"], ["chickpea", "garbanzo"]], "none": []}
+{"id": "r21", "split": "test", "query": "quinoa salad without feta", "all": [["quinoa"], ["salad"]], "none": ["feta"]}
+{"id": "r22", "split": "test", "query": "pork chops with apples", "all": [["pork"], ["apple"]], "none": []}
+{"id": "r23", "split": "test", "query": "gluten-free cookies", "all": [["cookie"]], "none": ["all-purpose flour", "all purpose flour", "wheat flour", "bread flour", "cake flour", "pastry flour", "graham", "self-rising", "plain flour", "whole-wheat", "oat"]}
+{"id": "r24", "split": "test", "query": "pasta without garlic or onion", "all": [["pasta", "spaghetti", "penne", "linguine", "fettuccine", "rigatoni", "orecchiette", "fusilli", "macaroni", "noodle", "bucatini"]], "none": ["garlic", "onion", "shallot", "scallion", "leek", "chive"]}
+{"id": "r25", "split": "test", "query": "mango and yogurt", "all": [["mango"], ["yogurt", "yoghurt", "curd"]], "none": []}
+{"id": "r26", "split": "test", "query": "kathirikai recipes", "all": [["eggplant", "aubergine", "brinjal"]], "none": []}
+{"id": "r27", "split": "test", "query": "corn and black beans", "all": [["corn"], ["black bean"]], "none": []}
+{"id": "r28", "split": "test", "query": "cod or halibut without butter", "all": [["cod", "halibut"]], "none": ["butter"]}
+{"id": "r29", "split": "test", "query": "zucchini bread", "all": [["zucchini", "courgette"], ["bread", "loaf", "flour"]], "none": []}
+{"id": "r30", "split": "test", "query": "okra recipes", "all": [["okra", "bhindi"]], "none": []}

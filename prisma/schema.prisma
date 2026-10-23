@@ -1,0 +1,123 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Profile {
+  id                String           @id @db.Uuid
+  full_name         String?
+  avatar_url        String?
+  height_cm         Float?
+  weight_kg         Float?
+  age               Int?
+  diet_type         String?
+  allergies         String[]
+  health_conditions String[]
+  other_info        String?
+  created_at        DateTime         @default(now())
+  updated_at        DateTime         @default(now()) @updatedAt
+  user_id           String?          @unique @db.Uuid
+  DietPreference    DietPreference?
+  HydrationTarget   HydrationTarget?
+  IngredientLists   IngredientList[]
+  PantryItems       PantryItem[]
+  auth_users        auth_users?      @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_user")
+  UserRecipes       UserRecipe[]
+  WaterLogs         WaterLog[]
+  WeightLogs        WeightLog[]
+}
+
+model DietPreference {
+  user_id        String   @id @db.Uuid
+  diet_type      String?
+  allergies      String[]
+  intolerances   String[]
+  calorie_target Int?
+  updated_at     DateTime @default(now()) @db.Timestamptz(6)
+  profile        Profile  @relation(fields: [user_id], references: [id])
+}
+
+model HydrationTarget {
+  user_id         String   @id @db.Uuid
+  daily_target_ml Int?     @default(2000)
+  updated_at      DateTime @default(now()) @db.Timestamptz(6)
+  profile         Profile  @relation(fields: [user_id], references: [id])
+}
+
+model IngredientList {
+  id         String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_id    String?   @db.Uuid
+  title      String?
+  items      String[]
+  created_at DateTime? @default(now()) @db.Timestamptz(6)
+  profile    Profile?  @relation(fields: [user_id], references: [id])
+}
+
+model PantryItem {
+  id         String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_id    String?   @db.Uuid
+  name       String?
+  quantity   String?
+  category   String?
+  created_at DateTime? @default(now()) @db.Timestamptz(6)
+  profile    Profile?  @relation(fields: [user_id], references: [id])
+}
+
+model Recipe {
+  id               String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  source           String?
+  source_id        String?
+  title            String?
+  image_url        String?
+  url              String?
+  diet_labels      String[]
+  ingredient_lines String[]
+  nutrients        Json?
+  created_at       DateTime? @default(now()) @db.Timestamptz(6)
+}
+
+model UserRecipe {
+  id           String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_id      String?   @db.Uuid
+  recipe_name  String?
+  tag          String?
+  calories     Int?
+  protein      Int?
+  fat          Int?
+  carbs        Int?
+  instructions String?
+  recipe_ref   String?
+  created_at   DateTime? @default(now()) @db.Timestamptz(6)
+  profile      Profile?  @relation(fields: [user_id], references: [id])
+}
+
+model WaterLog {
+  id        String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_id   String?   @db.Uuid
+  logged_at DateTime? @default(now()) @db.Timestamptz(6)
+  amount_ml Int?
+  profile   Profile?  @relation(fields: [user_id], references: [id])
+}
+
+model WeightLog {
+  id        String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_id   String?   @db.Uuid
+  logged_on DateTime? @default(now()) @db.Date
+  weight_kg Decimal?  @db.Decimal
+  note      String?
+  profile   Profile?  @relation(fields: [user_id], references: [id])
+}
+
+model auth_users {
+  id            String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  email         String    @unique
+  password_hash String
+  created_at    DateTime? @default(now()) @db.Timestamp(6)
+  Profile       Profile?
+}
+
+

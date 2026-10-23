@@ -1,0 +1,294 @@
+{
+  "split": "dev",
+  "timestamp": "2026-10-22 21:45",
+  "recipes": 13475,
+  "engine_build_seconds_warm_cache": 23.4,
+  "extraction": {
+    "n": 45,
+    "nutrichef_name_and_role": {
+      "precision": 0.98,
+      "recall": 1.0,
+      "f1": 0.99,
+      "tp": 98,
+      "fp": 2,
+      "fn": 0
+    },
+    "nutrichef_name_only": {
+      "precision": 0.98,
+      "recall": 1.0,
+      "f1": 0.99,
+      "tp": 98,
+      "fp": 2,
+      "fn": 0
+    },
+    "baseline_original_normalizer_name_only": {
+      "precision": 0.357,
+      "recall": 0.357,
+      "f1": 0.357,
+      "tp": 35,
+      "fp": 63,
+      "fn": 63
+    },
+    "baseline_spacy_ner_name_only": {
+      "precision": 0.042,
+      "recall": 0.01,
+      "f1": 0.016,
+      "tp": 1,
+      "fp": 23,
+      "fn": 97
+    },
+    "quantity_accuracy": 1.0,
+    "quantity_n": 16,
+    "exact_item_accuracy_by_tag": {
+      "allergy": {
+        "acc": 1.0,
+        "n": 2
+      },
+      "ambiguous": {
+        "acc": 0.5,
+        "n": 2
+      },
+      "available-cue": {
+        "acc": 0.5,
+        "n": 2
+      },
+      "bare-list": {
+        "acc": 1.0,
+        "n": 5
+      },
+      "dish-name": {
+        "acc": 1.0,
+        "n": 5
+      },
+      "list": {
+        "acc": 1.0,
+        "n": 2
+      },
+      "multiword": {
+        "acc": 0.857,
+        "n": 7
+      },
+      "negation": {
+        "acc": 1.0,
+        "n": 15
+      },
+      "negation-quality": {
+        "acc": 1.0,
+        "n": 1
+      },
+      "quantity": {
+        "acc": 1.0,
+        "n": 8
+      },
+      "regional": {
+        "acc": 1.0,
+        "n": 12
+      },
+      "tamil": {
+        "acc": 1.0,
+        "n": 4
+      },
+      "typo": {
+        "acc": 1.0,
+        "n": 3
+      }
+    },
+    "errors": [
+      {
+        "id": "x024",
+        "text": "gluten-free bread with almond flour",
+        "pred": [
+          [
+            "bread",
+            "preferred"
+          ],
+          [
+            "almond flour",
+            "required"
+          ]
+        ],
+        "expect": {
+          "required": [
+            "almond flour"
+          ]
+        }
+      },
+      {
+        "id": "x033",
+        "text": "vegetables I have: beetroot, radish, beans",
+        "pred": [
+          [
+            "vegetable",
+            "available"
+          ],
+          [
+            "beet",
+            "available"
+          ],
+          [
+            "radish",
+            "available"
+          ],
+          [
+            "legume",
+            "available"
+          ]
+        ],
+        "expect": {
+          "available": [
+            "beet",
+            "radish",
+            "legume|green bean"
+          ]
+        }
+      }
+    ]
+  },
+  "queries": {
+    "n": 35,
+    "intent_accuracy": 1.0,
+    "field_accuracy": {
+      "diets": {
+        "acc": 1.0,
+        "n": 12
+      },
+      "meal_types": {
+        "acc": 1.0,
+        "n": 15
+      },
+      "max_time_min": {
+        "acc": 1.0,
+        "n": 5
+      },
+      "qualities": {
+        "acc": 1.0,
+        "n": 10
+      },
+      "excluded_groups": {
+        "acc": 1.0,
+        "n": 3
+      },
+      "nutrition": {
+        "acc": 1.0,
+        "n": 3
+      },
+      "cuisines": {
+        "acc": 1.0,
+        "n": 5
+      },
+      "similar_to": {
+        "acc": 1.0,
+        "n": 2
+      },
+      "servings": {
+        "acc": 1.0,
+        "n": 1
+      }
+    },
+    "tamil_english_detection": {
+      "acc": 1.0,
+      "n": 2
+    },
+    "clarification_detection": {
+      "acc": 1.0,
+      "n": 1
+    },
+    "conflict_detection": {
+      "acc": 1.0,
+      "n": 1
+    },
+    "intent_confusions": {},
+    "errors": []
+  },
+  "synonyms": {
+    "n": 30,
+    "accuracy": 1.0,
+    "by_kind": {
+      "regional": {
+        "acc": 1.0,
+        "n": 13
+      },
+      "british": {
+        "acc": 1.0,
+        "n": 8
+      },
+      "plural": {
+        "acc": 1.0,
+        "n": 3
+      },
+      "tamil": {
+        "acc": 1.0,
+        "n": 4
+      },
+      "spelling": {
+        "acc": 1.0,
+        "n": 1
+      },
+      "identity": {
+        "acc": 1.0,
+        "n": 1
+      }
+    },
+    "errors": []
+  },
+  "typos": {
+    "misspellings_corrected": {
+      "acc": 0.95,
+      "n": 20
+    },
+    "correct_words_left_unchanged": {
+      "acc": 1.0,
+      "n": 10
+    },
+    "errors": [
+      {
+        "word": "tumeric",
+        "got": "tumeric",
+        "expected": "turmeric"
+      }
+    ]
+  },
+  "retrieval": {
+    "n_queries": 15,
+    "k": 10,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "systems": {
+      "keyword": {
+        "p@5": 0.28,
+        "p@10": 0.22,
+        "mrr": 0.4,
+        "ndcg@10": 0.254,
+        "constraint_violation_rate@10": 0.429,
+        "latency_ms_p50": 10.8,
+        "latency_ms_p95": 14.0
+      },
+      "tfidf": {
+        "p@5": 0.44,
+        "p@10": 0.393,
+        "mrr": 0.576,
+        "ndcg@10": 0.424,
+        "constraint_violation_rate@10": 0.771,
+        "latency_ms_p50": 10.0,
+        "latency_ms_p95": 13.7
+      },
+      "embedding": {
+        "p@5": 0.347,
+        "p@10": 0.293,
+        "mrr": 0.432,
+        "ndcg@10": 0.314,
+        "constraint_violation_rate@10": 0.829,
+        "latency_ms_p50": 11.8,
+        "latency_ms_p95": 14.3
+      },
+      "hybrid": {
+        "p@5": 0.853,
+        "p@10": 0.807,
+        "mrr": 0.9,
+        "ndcg@10": 0.817,
+        "constraint_violation_rate@10": 0.086,
+        "latency_ms_p50": 38.3,
+        "latency_ms_p95": 49.7
+      }
+    }
+  }
+}
